@@ -8,10 +8,10 @@
 #menuScreen[style*="display: none"],#menuScreen[style*="display:none"]{display:none!important}
 #menuInner{margin:0 auto!important;position:relative!important;transform:none!important;max-height:none!important;overflow:visible!important}
 #menuScreen button,#menuScreen select{touch-action:manipulation}
-</style></head><body><canvas id="game"></canvas><div id="hud"><div id="top"><div class="panel"><div class="brand" id="classLabel">☁️ CLOUDWAVE</div><div class="muted">HEALTH</div><div class="bar"><div id="hp" class="fill hp"></div></div><div class="muted" id="hptext"></div><div class="bar"><div id="xp" class="fill xp"></div></div><div class="muted" id="lvl"></div></div><div class="panel" id="stats"><div id="wave"></div><div id="clock"></div><div id="kills"></div><button id="speedToggle" title="Double the entire simulation speed">⏩ 2× SPEED: OFF</button><button id="pause">Ⅱ Pause</button></div></div><div id="abilityBox"><b id="abilityName"></b><small id="abilityTime"></small></div></div><div id="help">WASD / arrows — Move · F — Active ability · Shift — Blink dash · P — Pause · Auto attack</div><div id="toast"></div><div id="touch"><div id="stick"><div id="knob"></div></div></div><div id="actionTouch"><button id="actionBtn">✨ ABILITY</button><button id="dashTouchBtn" type="button">💨 DASH</button></div><div id="overlay"></div><div id="menuScreen"><div id="menuInner"><div id="coopPanel" style="background:#112d4b;border:1px solid #6ac5ef;border-radius:16px;padding:14px;margin:12px auto;max-width:690px;color:#e8faff"><b>🤝 GAME MODE</b><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:10px"><label><input type="radio" name="coopmode" value="solo" checked> Solo</label><label><input type="radio" name="coopmode" value="bots"> 3-Player Bot Co-op (2× enemy spawns and HP)</label></div><div id="botPickers" style="display:none;gap:12px;justify-content:center;flex-wrap:wrap"><label>Teammate 1 <select id="botClass1"></select></label><label>Teammate 2 <select id="botClass2"></select></label></div><small>AI allies automatically fight, dodge, dash, and use unique class abilities. Offline single-player co-op.</small></div><div class="sub">ENDLESS ARENA ROGUELITE</div><h1>✦ STORMBOUND ARENA</h1><p style="color:#afc5e1">Choose your class. Auto-attack enemies. Survive endless waves. Build a completely different fighter every run.</p><div class="classes"><div class="classCard selected" data-class="cloud"><div class="emoji">☁️</div><div class="tag">ATMOSPHERIC MAGE</div><strong>Cloudwave</strong><p>Summons clouds, launches vapor bolts and controls the battlefield with powerful storms.</p><div class="muted">Active [F]: Cloudfront — send a giant slowing damage cloud forward</div><button class="detailBtn" data-detail="cloud">☁️ FULL CLASS DETAILS</button></div><div class="classCard romancer" data-class="romance"><div class="emoji">💗</div><div class="tag">HEART MAGIC</div><strong>Romancer</strong><p>Fires enchanted hearts and spreads affection. Charm enemies and turn their attention away from you.</p><div class="muted">Active [F]: Heartcatcher — carry enemies in a giant heart, then explode</div><button class="detailBtn" data-detail="romance">💗 FULL CLASS DETAILS</button></div><div class="classCard darklily" data-class="lily"><div class="emoji">🥀</div><div class="tag">DARK BLOOM MAGIC</div><strong>Dark Lily</strong><p>Launches thorn petals and grows a crimson-black flower that pulses, detonates and restores health.</p><div class="muted">Active [F]: Scarlet Requiem — bloom, pulse, explode, heal and release seeking flowers</div><button class="detailBtn" data-detail="lily">🥀 FULL CLASS DETAILS</button></div><div class="classCard wind" data-class="wind"><div class="emoji">🍃</div><div class="tag">GALE DUELIST</div><strong>Windman</strong><p>Fires twin curved wind blades with lime trails. Excels at relentless attacks and rapid cooldown cycling.</p><div class="muted">Active [F]: Tailwind Frenzy — 60% less time between attacks for 3 seconds, then cooldown begins (minimum 5s)</div><button class="detailBtn" data-detail="wind">🍃 FULL CLASS DETAILS</button></div><div class="classCard star" data-class="star"><div class="emoji">🌠</div><div class="tag">CELESTIAL SORCERER</div><strong>Starfall</strong><p>Fires ten tiny white stars in a 0.5-second spread. Marks an area with blue-purple starlight before unleashing a stunning cosmic explosion.</p><div class="muted">Active [F]: Astral Convergence — sparkling damage zone, then 1.5s stun explosion</div><button class="detailBtn" data-detail="star">🌠 FULL CLASS DETAILS</button></div><div class="classCard electro" data-class="electro"><div class="emoji">⚡</div><div class="tag">CHAIN LIGHTNING</div><strong>Electropulser</strong><p>Links enemies with long-reaching crackling electric chains. Every strike jumps between nearby targets.</p><div class="muted">Active [F]: Overload Network — chain lightning from every enemy at once</div><button class="detailBtn" data-detail="electro">⚡ FULL CLASS DETAILS</button></div><div class="classCard" data-class="frost"><div class="emoji">❄️</div><div class="tag">GLACIAL CONTROL</div><strong>Frostbite</strong><p>Instant piercing ice lances that slow enemies.</p><div class="muted">Active [F]: Glacial Barricade: ice wall blocks enemies, fires icicles, then shatters.</div><button class="detailBtn" data-detail="frost">FULL CLASS DETAILS</button></div><div class="classCard" data-class="ember"><div class="emoji">🔥</div><div class="tag">BURN SPECIALIST</div><strong>Emberfox</strong><p>A short-range flamethrower cone that ignites groups.</p><div class="muted">Active [F]: Blazing Pursuit: three fire fox spirits chase and strike enemies.</div><button class="detailBtn" data-detail="ember">FULL CLASS DETAILS</button></div><div class="classCard" data-class="thorn"><div class="emoji">🌿</div><div class="tag">NATURE TRAPPER</div><strong>Thornkeeper</strong><p>A traveling thorn crescent that flies forward, slows and knocks back enemies.</p><div class="muted">Active [F]: Thorn Dominion: five vines grab, pull and fling enemies.</div><button class="detailBtn" data-detail="thorn">FULL CLASS DETAILS</button></div><div class="classCard" data-class="chrono"><div class="emoji">⏳</div><div class="tag">TIME BENDER</div><strong>Chronomancer</strong><p>A clock chime that instantly hits a target, then repeats after a delay.</p><div class="muted">Active [F]: Temporal Echo: a ghost replays your last three seconds of movement and attacks.</div><button class="detailBtn" data-detail="chrono">FULL CLASS DETAILS</button></div><div class="classCard" data-class="prism"><div class="emoji">🔷</div><div class="tag">REFRACTION MAGE</div><strong>Prismancer</strong><p>A direct refracted laser beam that branches between enemies.</p><div class="muted">Active [F]: Mirror Array: four orbiting mirrors copy and amplify your attacks.</div><button class="detailBtn" data-detail="prism">FULL CLASS DETAILS</button></div><div class="classCard" data-class="gravity"><div class="emoji">🪐</div><div class="tag">GRAVITY CONTROLLER</div><strong>Gravitywell</strong><p>Orbiting gravity satellites that damage enemies on contact.</p><div class="muted">Active [F]: Orbital Capture: gravity orb drags enemies into orbit then throws them outward.</div><button class="detailBtn" data-detail="gravity">FULL CLASS DETAILS</button></div></div><div class="infoActions"><button id="enemyLog">📖 ENEMY LOG</button></div><div class="menuFooter"><div id="best" class="muted" style="margin-bottom:14px"></div><button id="start">▶ PLAY CLOUDWAVE</button><p class="muted">WASD to move · Auto attack · F for your one active ability · 48 universal + 24 unique upgrades per class</p></div></div></div><script>
-(()=>{'use strict';const c=document.getElementById('game'),g=c.getContext('2d'),$=id=>document.getElementById(id);let W,H,dpr,selected='cloud',p,enemies=[],shots=[],pendingStars=[],effects=[],orbs=[],particles=[],enemyBolts=[],game={state:'menu'},cam={x:0,y:0},keys={},joy={x:0,y:0},last=0,toastLeft=0;const extraClasses={"frost": {"name": "Frostbite", "emoji": "❄️", "role": "GLACIAL CONTROL", "attack": "Instant piercing ice lances that slow enemies.", "ability": "Glacial Barricade: ice wall blocks enemies, fires icicles, then shatters.", "color": "#a9f4ff"}, "ember": {"name": "Emberfox", "emoji": "🔥", "role": "BURN SPECIALIST", "attack": "A short-range flamethrower cone that ignites groups.", "ability": "Blazing Pursuit: three fire fox spirits chase and strike enemies.", "color": "#ff9c54"}, "thorn": {"name": "Thornkeeper", "emoji": "🌿", "role": "NATURE TRAPPER", "attack": "A traveling thorn crescent that flies forward, slows and knocks back enemies.", "ability": "Thorn Dominion: five vines grab, pull and fling enemies.", "color": "#7bde80"}, "chrono": {"name": "Chronomancer", "emoji": "⏳", "role": "TIME BENDER", "attack": "A clock chime that instantly hits a target, then repeats after a delay.", "ability": "Temporal Echo: a ghost replays your last three seconds of movement and attacks.", "color": "#f5d68c"}, "prism": {"name": "Prismancer", "emoji": "🔷", "role": "REFRACTION MAGE", "attack": "A direct refracted laser beam that branches between enemies.", "ability": "Mirror Array: four orbiting mirrors copy and amplify your attacks.", "color": "#a5a2ff"}, "gravity": {"name": "Gravitywell", "emoji": "🪐", "role": "GRAVITY CONTROLLER", "attack": "Orbiting gravity satellites that damage enemies on contact.", "ability": "Orbital Capture: gravity orb drags enemies into orbit then throws them outward.", "color": "#bf8aff"}};const world={w:2600,h:2100},rand=(a,b)=>a+Math.random()*(b-a),clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);function resize(){W=innerWidth;H=innerHeight;dpr=Math.min(devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0)}addEventListener('resize',resize);resize();function say(s){$('toast').textContent=s;$('toast').style.opacity=1;toastLeft=2.2}function particlesAt(x,y,col,n=8){for(let i=0;i<n;i++){let a=rand(0,Math.PI*2),v=rand(30,190);particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:rand(.25,.75),max:.75,color:col,r:rand(2,5)})}}let coopBots=[],coopMode=false,botBolts=[],botEffects=[];
-const botClassIds=['cloud','romance','lily','wind','star','electro','frost','ember','thorn','chrono','prism','gravity'];
-const botClassNames=['Cloudwave','Romancer','Dark Lily','Windman','Starfall','Electropulser','Frostbite','Emberfox','Thornkeeper','Chronomancer','Prismancer','Gravitywell'];
+</style></head><body><canvas id="game"></canvas><div id="hud"><div id="top"><div class="panel"><div class="brand" id="classLabel">☁️ CLOUDWAVE</div><div class="muted">HEALTH</div><div class="bar"><div id="hp" class="fill hp"></div></div><div class="muted" id="hptext"></div><div class="bar"><div id="xp" class="fill xp"></div></div><div class="muted" id="lvl"></div></div><div class="panel" id="stats"><div id="wave"></div><div id="clock"></div><div id="kills"></div><button id="speedToggle" title="Double the entire simulation speed">⏩ 2× SPEED: OFF</button><button id="pause">Ⅱ Pause</button></div></div><div id="abilityBox"><b id="abilityName"></b><small id="abilityTime"></small></div></div><div id="help">WASD / arrows — Move · F — Active ability · Shift — Blink dash · P — Pause · Auto attack</div><div id="toast"></div><div id="touch"><div id="stick"><div id="knob"></div></div></div><div id="actionTouch"><button id="actionBtn">✨ ABILITY</button><button id="dashTouchBtn" type="button">💨 DASH</button></div><div id="overlay"></div><div id="menuScreen"><div id="menuInner"><div id="coopPanel" style="background:#112d4b;border:1px solid #6ac5ef;border-radius:16px;padding:14px;margin:12px auto;max-width:690px;color:#e8faff"><b>🤝 GAME MODE</b><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:10px"><label><input type="radio" name="coopmode" value="solo" checked> Solo</label><label><input type="radio" name="coopmode" value="bots"> 3-Player Bot Co-op (2× enemy spawns and HP)</label></div><div id="botPickers" style="display:none;gap:12px;justify-content:center;flex-wrap:wrap"><label>Teammate 1 <select id="botClass1"></select></label><label>Teammate 2 <select id="botClass2"></select></label></div><small>AI allies automatically fight, dodge, dash, and use unique class abilities. Offline single-player co-op.</small></div><div class="sub">ENDLESS ARENA ROGUELITE</div><h1>✦ STORMBOUND ARENA</h1><p style="color:#afc5e1">Choose your class. Auto-attack enemies. Survive endless waves. Build a completely different fighter every run.</p><div class="classes"><div class="classCard selected" data-class="cloud"><div class="emoji">☁️</div><div class="tag">ATMOSPHERIC MAGE</div><strong>Cloudwave</strong><p>Summons clouds, launches vapor bolts and controls the battlefield with powerful storms.</p><div class="muted">Active [F]: Cloudfront — send a giant slowing damage cloud forward</div><button class="detailBtn" data-detail="cloud">☁️ FULL CLASS DETAILS</button></div><div class="classCard romancer" data-class="romance"><div class="emoji">💗</div><div class="tag">HEART MAGIC</div><strong>Romancer</strong><p>Fires enchanted hearts and spreads affection. Charm enemies and turn their attention away from you.</p><div class="muted">Active [F]: Heartcatcher — carry enemies in a giant heart, then explode</div><button class="detailBtn" data-detail="romance">💗 FULL CLASS DETAILS</button></div><div class="classCard darklily" data-class="lily"><div class="emoji">🥀</div><div class="tag">DARK BLOOM MAGIC</div><strong>Dark Lily</strong><p>Launches thorn petals and grows a crimson-black flower that pulses, detonates and restores health.</p><div class="muted">Active [F]: Scarlet Requiem — bloom, pulse, explode, heal and release seeking flowers</div><button class="detailBtn" data-detail="lily">🥀 FULL CLASS DETAILS</button></div><div class="classCard wind" data-class="wind"><div class="emoji">🍃</div><div class="tag">GALE DUELIST</div><strong>Windman</strong><p>Fires twin curved wind blades with lime trails. Excels at relentless attacks and rapid cooldown cycling.</p><div class="muted">Active [F]: Tailwind Frenzy — 60% less time between attacks for 3 seconds, then cooldown begins (minimum 5s)</div><button class="detailBtn" data-detail="wind">🍃 FULL CLASS DETAILS</button></div><div class="classCard star" data-class="star"><div class="emoji">🌠</div><div class="tag">CELESTIAL SORCERER</div><strong>Starfall</strong><p>Fires ten tiny white stars in a 0.5-second spread. Marks an area with blue-purple starlight before unleashing a stunning cosmic explosion.</p><div class="muted">Active [F]: Astral Convergence — sparkling damage zone, then 1.5s stun explosion</div><button class="detailBtn" data-detail="star">🌠 FULL CLASS DETAILS</button></div><div class="classCard electro" data-class="electro"><div class="emoji">⚡</div><div class="tag">CHAIN LIGHTNING</div><strong>Electropulser</strong><p>Links enemies with long-reaching crackling electric chains. Every strike jumps between nearby targets.</p><div class="muted">Active [F]: Overload Network — chain lightning from every enemy at once</div><button class="detailBtn" data-detail="electro">⚡ FULL CLASS DETAILS</button></div><div class="classCard" data-class="frost"><div class="emoji">❄️</div><div class="tag">GLACIAL CONTROL</div><strong>Frostbite</strong><p>Instant piercing ice lances that slow enemies.</p><div class="muted">Active [F]: Glacial Barricade: ice wall blocks enemies, fires icicles, then shatters.</div><button class="detailBtn" data-detail="frost">FULL CLASS DETAILS</button></div><div class="classCard" data-class="ember"><div class="emoji">🔥</div><div class="tag">BURN SPECIALIST</div><strong>Emberfox</strong><p>A short-range flamethrower cone that ignites groups.</p><div class="muted">Active [F]: Blazing Pursuit: three fire fox spirits chase and strike enemies.</div><button class="detailBtn" data-detail="ember">FULL CLASS DETAILS</button></div><div class="classCard" data-class="thorn"><div class="emoji">🌿</div><div class="tag">NATURE TRAPPER</div><strong>Thornkeeper</strong><p>A traveling thorn crescent that flies forward, slows and knocks back enemies.</p><div class="muted">Active [F]: Thorn Dominion: five vines grab, pull and fling enemies.</div><button class="detailBtn" data-detail="thorn">FULL CLASS DETAILS</button></div><div class="classCard" data-class="chrono"><div class="emoji">⏳</div><div class="tag">TIME BENDER</div><strong>Chronomancer</strong><p>A clock chime that instantly hits a target, then repeats after a delay.</p><div class="muted">Active [F]: Temporal Echo: a ghost replays your last three seconds of movement and attacks.</div><button class="detailBtn" data-detail="chrono">FULL CLASS DETAILS</button></div><div class="classCard" data-class="prism"><div class="emoji">🔷</div><div class="tag">REFRACTION MAGE</div><strong>Prismancer</strong><p>A direct refracted laser beam that branches between enemies.</p><div class="muted">Active [F]: Mirror Array: four orbiting mirrors copy and amplify your attacks.</div><button class="detailBtn" data-detail="prism">FULL CLASS DETAILS</button></div><div class="classCard" data-class="gravity"><div class="emoji">🪐</div><div class="tag">GRAVITY CONTROLLER</div><strong>Gravitywell</strong><p>Orbiting gravity satellites that damage enemies on contact.</p><div class="muted">Active [F]: Orbital Capture: gravity orb drags enemies into orbit then throws them outward.</div><button class="detailBtn" data-detail="gravity">FULL CLASS DETAILS</button></div><div class="classCard" data-class="rune"><div class="emoji">📜</div><div class="tag">ARCANE SIGILS</div><strong>Runebinder</strong><p>Orbiting glyph darts mark targets.</p><div class="muted">Active [F]: Rune Relay: a living rune jumps between enemies.</div><button class="detailBtn" data-detail="rune">FULL CLASS DETAILS</button></div><div class="classCard" data-class="tide"><div class="emoji">🌊</div><div class="tag">TIDAL WEAVER</div><strong>Tidecaller</strong><p>Crescent water waves splash and soak enemies.</p><div class="muted">Active [F]: Tidal Surf: ride a rushing wave through enemies.</div><button class="detailBtn" data-detail="tide">FULL CLASS DETAILS</button></div><div class="classCard" data-class="puppet"><div class="emoji">🧵</div><div class="tag">STRING CONTROLLER</div><strong>Puppeteer</strong><p>Needle strings connect and lash multiple enemies.</p><div class="muted">Active [F]: Spiderweb Ambush: capture a group in a web, then launch them outward.</div><button class="detailBtn" data-detail="puppet">FULL CLASS DETAILS</button></div><div class="classCard" data-class="glass"><div class="emoji">🪞</div><div class="tag">SHARD ARTIST</div><strong>Glassweaver</strong><p>Razor glass triangles ricochet through enemies.</p><div class="muted">Active [F]: Prism Prison: engulf enemies in crystal, then explode after 3 seconds and slow them.</div><button class="detailBtn" data-detail="glass">FULL CLASS DETAILS</button></div><div class="classCard" data-class="myco"><div class="emoji">🍄</div><div class="tag">SPORE ALCHEMIST</div><strong>Mycelium</strong><p>Spores spread infection between nearby foes.</p><div class="muted">Active [F]: Spore Network: infection jumps between nearby enemies over time.</div><button class="detailBtn" data-detail="myco">FULL CLASS DETAILS</button></div><div class="classCard" data-class="sand"><div class="emoji">🏜️</div><div class="tag">DUNE WARDEN</div><strong>Sandstrider</strong><p>Boomerang sand crescents curve back to their caster.</p><div class="muted">Active [F]: Dune Rush: become a sandstream and dash through foes.</div><button class="detailBtn" data-detail="sand">FULL CLASS DETAILS</button></div><div class="classCard" data-class="sonic"><div class="emoji">🎵</div><div class="tag">RESONANCE BARD</div><strong>Soundbreaker</strong><p>Musical soundwaves ricochet in rhythmic pulses.</p><div class="muted">Active [F]: Resonance Cannon: channel a long-range sonic beam.</div><button class="detailBtn" data-detail="sonic">FULL CLASS DETAILS</button></div><div class="classCard" data-class="lantern"><div class="emoji">🏮</div><div class="tag">SPIRIT GUIDE</div><strong>Lanternkeeper</strong><p>Wisps of lantern light home in on weak enemies.</p><div class="muted">Active [F]: Paper Tempest: fire piercing paper shurikens in a wide fan, causing bleeding.</div><button class="detailBtn" data-detail="lantern">FULL CLASS DETAILS</button></div><div class="classCard" data-class="magnet"><div class="emoji">🧲</div><div class="tag">POLARITY ENGINEER</div><strong>Magnetist</strong><p>Magnetic discs arc between nearby metal-marked foes.</p><div class="muted">Active [F]: Magnetic Implosion: capture enemies, crush them inward, then blast them apart.</div><button class="detailBtn" data-detail="magnet">FULL CLASS DETAILS</button></div><div class="classCard" data-class="dream"><div class="emoji">🌙</div><div class="tag">ILLUSIONIST</div><strong>Dreamwalker</strong><p>Dream butterflies weave unpredictably toward enemies.</p><div class="muted">Active [F]: False Awakening: decoy pulses damage each second before shattering.</div><button class="detailBtn" data-detail="dream">FULL CLASS DETAILS</button></div><div class="classCard" data-class="comet"><div class="emoji">☄️</div><div class="tag">METEOR DANCER</div><strong>Comet Rider</strong><p>Comet spears streak forward leaving burning trails.</p><div class="muted">Active [F]: Comet Crash: a single telegraphed meteor strikes with a powerful impact.</div><button class="detailBtn" data-detail="comet">FULL CLASS DETAILS</button></div><div class="classCard" data-class="alchem"><div class="emoji">⚗️</div><div class="tag">POTION MASTER</div><strong>Alchemist</strong><p>Color-shifting potion globes burst with varied effects.</p><div class="muted">Active [F]: Crimson Solvent: throw a red potion that drains enemy health over time.</div><button class="detailBtn" data-detail="alchem">FULL CLASS DETAILS</button></div></div><div class="infoActions"><button id="enemyLog">📖 ENEMY LOG</button></div><div class="menuFooter"><div id="best" class="muted" style="margin-bottom:14px"></div><button id="start">▶ PLAY CLOUDWAVE</button><p class="muted">WASD to move · Auto attack · F for your one active ability · 48 universal upgrades + distinct class upgrade paths</p></div></div></div><script>
+(()=>{'use strict';const c=document.getElementById('game'),g=c.getContext('2d'),$=id=>document.getElementById(id);let W,H,dpr,selected='cloud',p,enemies=[],shots=[],pendingStars=[],effects=[],orbs=[],particles=[],enemyBolts=[],game={state:'menu'},cam={x:0,y:0},keys={},joy={x:0,y:0},last=0,toastLeft=0;const extraClasses={"frost": {"name": "Frostbite", "emoji": "❄️", "role": "GLACIAL CONTROL", "attack": "Instant piercing ice lances that slow enemies.", "ability": "Glacial Barricade: ice wall blocks enemies, fires icicles, then shatters.", "color": "#a9f4ff"}, "ember": {"name": "Emberfox", "emoji": "🔥", "role": "BURN SPECIALIST", "attack": "A short-range flamethrower cone that ignites groups.", "ability": "Blazing Pursuit: three fire fox spirits chase and strike enemies.", "color": "#ff9c54"}, "thorn": {"name": "Thornkeeper", "emoji": "🌿", "role": "NATURE TRAPPER", "attack": "A traveling thorn crescent that flies forward, slows and knocks back enemies.", "ability": "Thorn Dominion: five vines grab, pull and fling enemies.", "color": "#7bde80"}, "chrono": {"name": "Chronomancer", "emoji": "⏳", "role": "TIME BENDER", "attack": "A clock chime that instantly hits a target, then repeats after a delay.", "ability": "Temporal Echo: a ghost replays your last three seconds of movement and attacks.", "color": "#f5d68c"}, "prism": {"name": "Prismancer", "emoji": "🔷", "role": "REFRACTION MAGE", "attack": "A direct refracted laser beam that branches between enemies.", "ability": "Mirror Array: four orbiting mirrors copy and amplify your attacks.", "color": "#a5a2ff"}, "gravity": {"name": "Gravitywell", "emoji": "🪐", "role": "GRAVITY CONTROLLER", "attack": "Orbiting gravity satellites that damage enemies on contact.", "ability": "Orbital Capture: gravity orb drags enemies into orbit then throws them outward.", "color": "#bf8aff"}};Object.assign(extraClasses,{"rune": {"name": "Runebinder", "emoji": "📜", "role": "ARCANE SIGILS", "attack": "Orbiting glyph darts mark targets.", "ability": "Rune Relay: a living rune jumps between enemies, marking and striking each target.", "color": "#ffca72"}, "tide": {"name": "Tidecaller", "emoji": "🌊", "role": "TIDAL WEAVER", "attack": "Crescent water waves splash and soak enemies.", "ability": "Tidal Surf: ride a rushing wave through enemies.", "color": "#54dfff"}, "puppet": {"name": "Puppeteer", "emoji": "🧵", "role": "STRING CONTROLLER", "attack": "Needle strings connect and lash multiple enemies.", "ability": "Spiderweb Ambush: snare nearby enemies, then throw them outward.", "color": "#ff9bc7"}, "glass": {"name": "Glassweaver", "emoji": "🪞", "role": "SHARD ARTIST", "attack": "Razor glass triangles ricochet through enemies.", "ability": "Prism Prison: trap enemies in a giant prism that explodes after 3 seconds.", "color": "#b6f6ff"}, "myco": {"name": "Mycelium", "emoji": "🍄", "role": "SPORE ALCHEMIST", "attack": "Spores spread infection between nearby foes.", "ability": "Spore Network: infection jumps between nearby enemies over time.", "color": "#b6e17c"}, "sand": {"name": "Sandstrider", "emoji": "🏜️", "role": "DUNE WARDEN", "attack": "Boomerang sand crescents curve back to their caster.", "ability": "Dune Rush: become a sandstream, dash through foes and leave sparkling sand.", "color": "#eec58b"}, "sonic": {"name": "Soundbreaker", "emoji": "🎵", "role": "RESONANCE BARD", "attack": "Musical soundwaves ricochet in rhythmic pulses.", "ability": "Resonance Cannon: channel a continuous long-range sonic beam.", "color": "#fc86ec"}, "lantern": {"name": "Lanternkeeper", "emoji": "🏮", "role": "SPIRIT GUIDE", "attack": "Wisps of lantern light home in on weak enemies.", "ability": "Paper Tempest: fire piercing paper shurikens in a wide fan, causing bleeding.", "color": "#f9e78b"}, "magnet": {"name": "Magnetist", "emoji": "🧲", "role": "POLARITY ENGINEER", "attack": "Magnetic discs arc between nearby metal-marked foes.", "ability": "Magnetic Implosion: capture enemies, crush them inward, then blast them apart.", "color": "#f28d94"}, "dream": {"name": "Dreamwalker", "emoji": "🌙", "role": "ILLUSIONIST", "attack": "Dream butterflies weave unpredictably toward enemies.", "ability": "False Awakening: decoy distracts enemies and pulses damage every second.", "color": "#aa9dff"}, "comet": {"name": "Comet Rider", "emoji": "☄️", "role": "METEOR DANCER", "attack": "Comet spears streak forward leaving burning trails.", "ability": "Comet Crash: a single telegraphed meteor strikes with a powerful impact.", "color": "#ffad68"}, "alchem": {"name": "Alchemist", "emoji": "⚗️", "role": "POTION MASTER", "attack": "Color-shifting potion globes burst with varied effects.", "ability": "Crimson Solvent: throw a red potion that drains enemy health over time.", "color": "#8df1a9"}});const world={w:2600,h:2100},rand=(a,b)=>a+Math.random()*(b-a),clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);function resize(){W=innerWidth;H=innerHeight;dpr=Math.min(devicePixelRatio||1,2);c.width=W*dpr;c.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0)}addEventListener('resize',resize);resize();function say(s){$('toast').textContent=s;$('toast').style.opacity=1;toastLeft=2.2}function particlesAt(x,y,col,n=8){for(let i=0;i<n;i++){let a=rand(0,Math.PI*2),v=rand(30,190);particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:rand(.25,.75),max:.75,color:col,r:rand(2,5)})}}let coopBots=[],coopMode=false,botBolts=[],botEffects=[];
+const botClassIds=['cloud','romance','lily','wind','star','electro','frost','ember','thorn','chrono','prism','gravity','rune','tide','puppet','glass','myco','sand','sonic','lantern','magnet','dream','comet','alchem'];
+const botClassNames=['Cloudwave','Romancer','Dark Lily','Windman','Starfall','Electropulser','Frostbite','Emberfox','Thornkeeper','Chronomancer','Prismancer','Gravitywell','Runebinder','Tidecaller','Puppeteer','Glassweaver','Mycelium','Sandstrider','Soundbreaker','Lanternkeeper','Magnetist','Dreamwalker','Comet Rider','Alchemist'];
 function botName(id){return botClassNames[botClassIds.indexOf(id)]||id}
 function setupBotSelectors(){for(let n of [1,2]){let sel=$('botClass'+n);sel.innerHTML=botClassIds.map((id,i)=>`<option value="${id}">${botClassNames[i]}</option>`).join('');sel.value=n===1?'frost':'electro'}document.querySelectorAll('input[name="coopmode"]').forEach(r=>r.addEventListener('change',()=>{$('botPickers').style.display=document.querySelector('input[name="coopmode"]:checked').value==='bots'?'flex':'none'}))}
 function createBot(id,index){return {id,classId:id,index,name:botName(id),x:p.x+(index?70:-70),y:p.y+65,r:17,hp:120,maxhp:120,speed:235,damage:18,range:id==='ember'?170:420,rate:id==='star'?.62:.68,attackTimer:rand(0,.5),abilityTimer:rand(1,3),dashTimer:0,inv:0,faceX:1,faceY:0,skillFx:0,level:1,alive:true,color:extraClasses[id]?.color||({cloud:'#a9eeff',romance:'#ff9dd4',lily:'#e66a9b',wind:'#baff6d',star:'#9b9fff',electro:'#70eaff'})[id],emoji:extraClasses[id]?.emoji||({cloud:'☁️',romance:'💗',lily:'🥀',wind:'🍃',star:'🌠',electro:'⚡'})[id]}}
@@ -74,10 +74,37 @@ function botAttack(b,e){
  });
 }
 function botBestAbilityAim(b){
+ const id=b.id,live=enemies.filter(e=>!e.dead);
+ if(!live.length)return null;
+ // Skills have different tactical jobs: don't treat a beam, fan, decoy or infection as generic AoE.
+ const nearest=live.reduce((best,e)=>!best||distance(e,b)<distance(best,b)?e:best,null);
+ const nearestAim=e=>({target:e,x:e.x,y:e.y,count:1,score:1,angle:Math.atan2(e.y-b.y,e.x-b.x)});
+ if(['sonic','tide','sand','lantern','rune','myco','alchem'].includes(id)){
+  if(id==='sonic'){
+   let best=nearest,score=-1;
+   for(const e of live.slice(0,45)){
+    const a=Math.atan2(e.y-b.y,e.x-b.x),dx=Math.cos(a),dy=Math.sin(a);
+    const hits=live.filter(z=>{const x=z.x-b.x,y=z.y-b.y,along=x*dx+y*dy;return along>0&&along<640&&Math.abs(x*dy-y*dx)<60+z.r}).length;
+    if(hits>score){best=e;score=hits}
+   }
+   const aim=nearestAim(best);aim.count=score;return aim;
+  }
+  if(id==='myco'){
+   const candidate=live.filter(e=>distance(e,b)<570).sort((a,c)=>{
+    const ca=live.filter(z=>distance(e,z)<125).length,cb=live.filter(z=>distance(c,z)<125).length;
+    return cb-ca;
+   })[0]||nearest;
+   return nearestAim(candidate);
+  }
+  if(id==='alchem'){
+   const candidate=live.filter(e=>distance(e,b)<520).sort((a,c)=>c.maxhp-c.hp-(a.maxhp-a.hp))[0]||nearest;
+   return nearestAim(candidate);
+  }
+  return nearestAim(nearest);
+ }
  const cluster=botClusterAim(b);
- if(!cluster)return null;
- const target=cluster.target;
- return {target,x:cluster.x,y:cluster.y,count:cluster.count,score:cluster.score,
+ if(!cluster)return nearestAim(nearest);
+ return {target:cluster.target,x:cluster.x,y:cluster.y,count:cluster.count,score:cluster.score,
   angle:Math.atan2(cluster.y-b.y,cluster.x-b.x)};
 }
 function botAbility(b,aim=null){
@@ -103,8 +130,8 @@ function drawBotClassEffects(){
  }
 }
 let teamPlan=null,teamPlanTimer=0;
-const gatherClasses=new Set(['gravity','thorn','romance','cloud']);
-const burstClasses=new Set(['star','electro','frost','ember','prism','lily','wind','chrono']);
+const gatherClasses=new Set(['gravity','thorn','romance','cloud','puppet','magnet']);
+const burstClasses=new Set(['star','electro','frost','ember','prism','lily','wind','chrono','rune','tide','glass','myco','sand','sonic','dream','comet','alchem','lantern']);
 function updateTeamPlan(dt){
  if(!coopMode)return;
  teamPlanTimer-=dt;
@@ -165,7 +192,7 @@ function updateBots(dt){
      b.lureActive=true;
     }else b.lureActive=false;
    }else b.lureActive=false;
-   const desired=b.id==='star'?175:b.id==='ember'?130:b.id==='thorn'?190:b.id==='gravity'?145:b.id==='wind'?210:260;
+   const desired=b.id==='puppet'?205:b.id==='sand'?220:b.id==='sonic'?205:b.id==='star'?175:b.id==='ember'?130:b.id==='thorn'?190:b.id==='gravity'?145:b.id==='wind'?210:260;
    // Hysteresis: only change approach/retreat state outside a broad neutral band.
    if(!b.moveMode)b.moveMode='approach';
    if(b.moveMode==='approach'&&d<desired-65)b.moveMode='retreat';
@@ -225,7 +252,7 @@ function updateBots(dt){
    if(b.abilityTimer<=0){
     b.abilityReadyWait=(b.abilityReadyWait||0)+dt;
     const aim=botBestAbilityAim(b);
-    const aoe=botAoEClasses.has(b.id);
+    const aoe=botAoEClasses.has(b.id)||['puppet','glass','magnet','comet','dream'].includes(b.id);
     const minimum=aoe?3:1;
     const timedOut=b.abilityReadyWait>=7;
     const selfCentered=b.id==='star'||b.id==='lily';
@@ -290,10 +317,11 @@ function updateBots(dt){
   b.speed=p.speed; b.vx=(b.vx||0)+(vx*b.speed-(b.vx||0))*blend;
   b.vy=(b.vy||0)+(vy*b.speed-(b.vy||0))*blend;
   if(Math.hypot(b.vx,b.vy)>8){b.faceX=b.vx/Math.hypot(b.vx,b.vy);b.faceY=b.vy/Math.hypot(b.vx,b.vy)}
-  b.x=clamp(b.x+b.vx*dt,b.r,world.w-b.r);
-  b.y=clamp(b.y+b.vy*dt,b.r,world.h-b.r);
+  b.steerX=vx;b.steerY=vy;
+  if(!b.skillSteering)b.x=clamp(b.x+b.vx*dt,b.r,world.w-b.r);
+  if(!b.skillSteering)b.y=clamp(b.y+b.vy*dt,b.r,world.h-b.r);
   // If the player travels far away, smoothly catch up rather than teleport.
-  if(p.hp>0&&distance(b,p)>570){
+  if(!b.skillSteering&&p.hp>0&&distance(b,p)>570){
    let a=Math.atan2(p.y-b.y,p.x-b.x);
    b.x=clamp(b.x+Math.cos(a)*b.speed*1.25*dt,b.r,world.w-b.r);
    b.y=clamp(b.y+Math.sin(a)*b.speed*1.25*dt,b.r,world.h-b.r);
@@ -370,10 +398,12 @@ function checkTeamWipe(){
 function damageBot(b,amount,slow=false){if(!b.alive||b.inv>0)return;amount*=Math.max(.35,1-(b.armor||0));getStats(b).taken+=amount;b.hp-=amount;b.inv=.85;if(slow)b.skillFx=1.5;particlesAt(b.x,b.y,'#ff7297',9);if(b.hp<=0){b.hp=0;b.alive=false;b.ownFx=[];b.ownHistory=[];particlesAt(b.x,b.y,b.color,32);say('💔 '+b.name+' was defeated');checkTeamWipe()}}
 function drawBots(){if(!coopMode)return;for(let ef of botEffects){g.save();g.globalAlpha=Math.max(0,ef.life/ef.full)*.75;g.strokeStyle=ef.color;g.shadowColor=ef.color;g.shadowBlur=17;g.lineWidth=ef.kind==='dash'?14:ef.kind==='beam'?5:4;g.beginPath();if(ef.kind==='beam'||ef.kind==='dash'){g.moveTo(ef.x,ef.y);g.lineTo(ef.tx,ef.ty)}else g.arc(ef.x,ef.y,ef.r*(ef.kind==='pulse'?1-ef.life/ef.full*.5:1),0,Math.PI*2);g.stroke();g.restore()}
 for(let bolt of botBolts){g.save();g.shadowColor=bolt.color;g.shadowBlur=18;circle(bolt.x,bolt.y,bolt.r,bolt.color);g.restore()}
-for(let b of coopBots){if(!b.alive)continue;g.save();g.translate(b.x,b.y);g.globalAlpha=b.inv>0?.65:1;g.shadowColor=b.color;g.shadowBlur=22;circle(0,0,b.r+4,b.color);circle(0,0,b.r-2,'#203450');g.font='18px system-ui';g.textAlign='center';g.textBaseline='middle';g.fillText(b.emoji,0,1);g.shadowBlur=0;g.fillStyle='#142139';g.fillRect(-24,-32,48,6);g.fillStyle='#66eeb7';g.fillRect(-24,-32,48*b.hp/b.maxhp,6);g.fillStyle='#e8faff';g.font='bold 11px system-ui';g.fillText('BOT '+(b.index+1),0,-39);g.restore()}}
-let playerClassId='cloud',actorContextDepth=0;let hearts=[];function reset(){spectateBotIndex=-1;playerClassId=selected;hearts=[];teamPlan=null;currentDamageOwner=null;teamStats=new Map();leaderboardTimer=0;leaderboardLast='';bossCinema=null;botSpeech=[];recentBotLines=[];nextBotTalk=5;p={id:playerClassId,x:1300,y:1050,r:17,hp:120,maxhp:120,speed:235,damage:18,rate:.68,attackTimer:0,range:510,shotSpeed:560,projectiles:1,homing:0,pierce:0,bounce:0,shotSize:1,shotLifetime:1,knockback:0,execution:0,crit:.08,critDmg:1.5,armor:0,regen:0,leech:0,pickup:110,abilityCd:extraClasses[selected]?13:selected==='cloud'?12:selected==='romance'?14:selected==='lily'?13:selected==='star'?13:selected==='electro'?14:11,abilityTimer:0,windActive:0,windDuration:3,windBonus:.6,starRadius:1,starTick:.48,starPulse:1,starBlast:1,starStun:1.5,starDuration:1,starShards:0,starShimmer:0,electroJumps:3,electroRange:245,electroFalloff:.72,electroPower:1,electroTargets:1,electroActivePower:1,electroActiveJumps:3,electroActiveRange:1.4,electroStun:0,electroRepeat:0,windCurve:1,windBladeDamage:1,windTrail:1,windSpread:1,windCooldownBonus:0,abilityPower:1,abilityRadius:1, dashCd:4.5,dashTimer:0,faceX:1,faceY:0,abilityDuration:1,abilityExtra:0,inv:0,level:1,xp:0,next:16,cloudTick:.5,cloudSlow:.25,cloudDrift:1,cloudSize:1,cloudLife:1,cloudLightning:0,cloudBurst:0,cloudSplash:.28,cloudSplashRadius:55,heartCharm:2.6,heartRadius:1,heartDamage:1,heartSpread:0,heartBasicCharm:.12,heartCharmBonus:0,heartHeal:0,heartEcho:0,heartExplosion:0,heartSlow:0,heartChain:0,heartAura:0,heartDuration:1,heartProjectiles:0,lilyRadius:1,lilyPulse:1,lilyHeal:1,lilyDebuff:.35,lilyDuration:1,lilyPetals:0,lilyBloom:1,lilyEcho:0,lilyThorns:0,lilyLifesteal:0,lilyCurse:0,lilyBleed:0,lilyBleedTime:2.5,lilyBleedPower:.12,lilyBurst:1,lilyTick:.55,lilyRegen:0,extraPower:1,extraSize:1,extraCount:0,extraDuration:1,extraTick:1,extraSlow:0,extraHeal:0,extraPierce:0,extraRange:1};coopMode=document.querySelector('input[name="coopmode"]:checked')?.value==='bots';coopBots=coopMode?[createBot($('botClass1').value,0),createBot($('botClass2').value,1)]:[];if(coopMode)p.next*=2;for(const b of coopBots){Object.assign(b,{...p,...b});b.id=b.classId;b.ownFx=[];b.ownHistory=[];b.projectiles=1;b.rate=b.id==='star'?.62:.68;b.attackTimer=rand(0,.5);b.abilityTimer=rand(1,3);b.range=b.id==='ember'?255:510;b.speed=235;b.armor=Math.max(b.armor||0,.22);b.regen=Math.max(b.regen||0,1.1);b.abilityCd=extraClasses[b.id]?13:b.id==='cloud'?12:b.id==='romance'?14:b.id==='lily'?13:b.id==='star'?13:b.id==='electro'?14:11;b.dashCd=4.5;b.windActive=0;b.alive=true;}botBolts=[];botEffects=[];enemies=[];shots=[];pendingStars=[];effects=[];orbs=[];particles=[];enemyBolts=[];specialFx=[];history=[];game={state:'play',speed:game.speed||1,time:0,wave:1,waveTime:0,kills:0,spawn:0,bossSpawned:false,pending:0,upgrades:0};cam.x=p.x-W/2;cam.y=p.y-H/2;$('speedToggle').textContent=game.speed===2?'⏩ 2× SPEED: ON':'⏩ 2× SPEED: OFF';$('hud').style.display='block';$('menuScreen').style.display='none';$('overlay').style.display='none';$('classLabel').textContent=extraClasses[playerClassId]?extraClasses[selected].emoji+' '+extraClasses[selected].name.toUpperCase():selected==='cloud'?'☁️ CLOUDWAVE':selected==='romance'?'💗 ROMANCER':selected==='lily'?'🥀 DARK LILY':selected==='star'?'🌠 STARFALL':selected==='electro'?'⚡ ELECTROPULSER':'🍃 WINDMAN';$('abilityName').textContent=extraClasses[selected]?'[F] '+extraClasses[selected].ability.split(':')[0]:selected==='cloud'?'[F] Cloudfront':selected==='romance'?'[F] Heartcatcher':selected==='lily'?'[F] Scarlet Requiem':selected==='star'?'[F] Astral Convergence':selected==='electro'?'[F] Overload Network':'[F] Tailwind Frenzy';updateHud()}function mainMenu(){if(document.getElementById('spectateControl'))document.getElementById('spectateControl').style.display='none';if(document.getElementById('teamLeaderboard')){document.getElementById('teamLeaderboard').style.display='none';document.getElementById('leaderboardToggle').style.display='none'}game.state='menu';$('overlay').style.display='none';$('hud').style.display='none';$('menuScreen').style.display='flex';$('best').textContent='🏆 Personal best: Wave '+(localStorage.getItem('stormboundBest')||1);selectClass(playerClassId)}function selectClass(cls){if(game.state==='play'||game.state==='upgrade')return;selected=cls;playerClassId=cls;document.querySelectorAll('.classCard').forEach(el=>el.classList.toggle('selected',el.dataset.class===cls));$('start').textContent='▶ PLAY '+(extraClasses[cls]?extraClasses[cls].name.toUpperCase():cls==='cloud'?'CLOUDWAVE':cls==='romance'?'ROMANCER':cls==='lily'?'DARK LILY':cls==='star'?'STARFALL':cls==='electro'?'ELECTROPULSER':'WINDMAN')}document.querySelectorAll('.classCard').forEach(el=>el.onclick=e=>{if(e.target.closest('.detailBtn'))return;selectClass(el.dataset.class)});document.querySelectorAll('.detailBtn').forEach(b=>b.onclick=e=>{e.stopPropagation();showClassDetails(b.dataset.detail)});$('enemyLog').onclick=showEnemyLog;$('start').onclick=reset;
+for(let b of coopBots){if(!b.alive)continue;g.save();g.translate(b.x,b.y);g.globalAlpha=b.inv>0?.65:1;g.shadowColor=b.color;g.shadowBlur=22;drawUniqueClassFace(b.id||b.kind,0,0,b.r,0);g.shadowBlur=0;g.fillStyle='#142139';g.fillRect(-24,-32,48,6);g.fillStyle='#66eeb7';g.fillRect(-24,-32,48*b.hp/b.maxhp,6);g.fillStyle='#e8faff';g.font='bold 11px system-ui';g.textAlign='center';g.fillText((extraClasses[b.id]?.name||({cloud:'Cloudwave',romance:'Romancer',lily:'Dark Lily',wind:'Windman',star:'Starfall',electro:'Electropulser'})[b.id]||b.id),0,-39);g.restore()}}
+// Base attack tuning targets approximately 15-27 single-target DPS at level 1; chain, DoT, piercing and AoE vary by enemy grouping.
+const classCombatProfiles={"cloud":[19,0.91,1,12],"romance":[17,0.79,1,14],"lily":[21,1.03,1,13],"wind":[13,0.89,1,11],"star":[12,1.12,1,13],"electro":[18,1.07,1,14],"frost":[23,1.09,1,13],"ember":[21,0.74,1,12],"thorn":[23,1.14,1,14],"chrono":[17,1.01,1,14],"prism":[17,1.17,1,15],"gravity":[20,1.22,1,14],"rune":[19,1.04,1,12],"tide":[22,1.01,0.92,14],"puppet":[24,0.98,0.85,13],"glass":[26,1.12,1.05,16],"myco":[12,1.23,0.85,14],"sand":[28,1.16,1,14],"sonic":[22,0.93,1,14],"lantern":[19,1.02,0.9,15],"magnet":[22,1.31,1,16],"dream":[23,1.09,0.95,14],"comet":[29,1.21,1.15,17],"alchem":[28,1.28,0.95,16]};function applyClassProfile(actor,id){const v=classCombatProfiles[id];if(!v)return;actor.damage=v[0];actor.rate=v[1];actor.shotSpeed*=v[2];if(NEW_CLASS_IDS.includes(id))actor.abilityCd=v[3];}
+let playerClassId='cloud',actorContextDepth=0;let hearts=[];function reset(){spectateBotIndex=-1;playerClassId=selected;hearts=[];teamPlan=null;currentDamageOwner=null;teamStats=new Map();leaderboardTimer=0;leaderboardLast='';bossCinema=null;botSpeech=[];recentBotLines=[];nextBotTalk=5;p={id:playerClassId,x:1300,y:1050,r:17,hp:120,maxhp:120,speed:235,damage:18,rate:.68,attackTimer:0,range:510,shotSpeed:560,projectiles:1,homing:0,pierce:0,bounce:0,shotSize:1,shotLifetime:1,knockback:0,execution:0,crit:.08,critDmg:1.5,armor:0,regen:0,leech:0,pickup:110,abilityCd:extraClasses[selected]?13:selected==='cloud'?12:selected==='romance'?14:selected==='lily'?13:selected==='star'?13:selected==='electro'?14:11,abilityTimer:0,windActive:0,windDuration:3,windBonus:.6,starRadius:1,starTick:.48,starPulse:1,starBlast:1,starStun:1.5,starDuration:1,starShards:0,starShimmer:0,electroJumps:3,electroRange:245,electroFalloff:.72,electroPower:1,electroTargets:1,electroActivePower:1,electroActiveJumps:3,electroActiveRange:1.4,electroStun:0,electroRepeat:0,windCurve:1,windBladeDamage:1,windTrail:1,windSpread:1,windCooldownBonus:0,abilityPower:1,abilityRadius:1, dashCd:4.5,dashTimer:0,faceX:1,faceY:0,abilityDuration:1,abilityExtra:0,inv:0,level:1,xp:0,next:16,cloudTick:.5,cloudSlow:.25,cloudDrift:1,cloudSize:1,cloudLife:1,cloudLightning:0,cloudBurst:0,cloudSplash:.28,cloudSplashRadius:55,heartCharm:2.6,heartRadius:1,heartDamage:1,heartSpread:0,heartBasicCharm:.12,heartCharmBonus:0,heartHeal:0,heartEcho:0,heartExplosion:0,heartSlow:0,heartChain:0,heartAura:0,heartDuration:1,heartProjectiles:0,lilyRadius:1,lilyPulse:1,lilyHeal:1,lilyDebuff:.35,lilyDuration:1,lilyPetals:0,lilyBloom:1,lilyEcho:0,lilyThorns:0,lilyLifesteal:0,lilyCurse:0,lilyBleed:0,lilyBleedTime:2.5,lilyBleedPower:.12,lilyBurst:1,lilyTick:.55,lilyRegen:0,extraPower:1,extraSize:1,extraCount:0,extraDuration:1,extraTick:1,extraSlow:0,extraHeal:0,extraPierce:0,extraRange:1};applyClassProfile(p,playerClassId);coopMode=document.querySelector('input[name="coopmode"]:checked')?.value==='bots';coopBots=coopMode?[createBot($('botClass1').value,0),createBot($('botClass2').value,1)]:[];if(coopMode)p.next*=2;for(const b of coopBots){Object.assign(b,{...p,...b});b.id=b.classId;b.name=extraClasses[b.id]?.name||({cloud:'Cloudwave',romance:'Romancer',lily:'Dark Lily',wind:'Windman',star:'Starfall',electro:'Electropulser'})[b.id]||b.id;b.color=UNIQUE_CLASS_FACES[b.id]?.[0]||b.color;b.ownFx=[];b.ownHistory=[];b.projectiles=1;b.rate=.68;b.attackTimer=rand(0,.5);b.abilityTimer=rand(1,3);b.range=b.id==='ember'?255:b.id==='puppet'?360:b.id==='sand'?390:510;b.speed=235;b.armor=Math.max(b.armor||0,.22);b.regen=Math.max(b.regen||0,1.1);b.abilityCd=extraClasses[b.id]?13:b.id==='cloud'?12:b.id==='romance'?14:b.id==='lily'?13:b.id==='star'?13:b.id==='electro'?14:11;b.dashCd=4.5;b.windActive=0;applyClassProfile(b,b.id);b.alive=true;}botBolts=[];botEffects=[];enemies=[];shots=[];pendingStars=[];effects=[];orbs=[];particles=[];enemyBolts=[];specialFx=[];history=[];game={state:'play',speed:game.speed||1,time:0,wave:1,waveTime:0,kills:0,spawn:0,bossSpawned:false,pending:0,upgrades:0};cam.x=p.x-W/2;cam.y=p.y-H/2;$('speedToggle').textContent=game.speed===2?'⏩ 2× SPEED: ON':'⏩ 2× SPEED: OFF';$('hud').style.display='block';$('menuScreen').style.display='none';$('overlay').style.display='none';$('classLabel').textContent=extraClasses[playerClassId]?extraClasses[selected].emoji+' '+extraClasses[selected].name.toUpperCase():selected==='cloud'?'☁️ CLOUDWAVE':selected==='romance'?'💗 ROMANCER':selected==='lily'?'🥀 DARK LILY':selected==='star'?'🌠 STARFALL':selected==='electro'?'⚡ ELECTROPULSER':'🍃 WINDMAN';$('abilityName').textContent=extraClasses[selected]?'[F] '+extraClasses[selected].ability.split(':')[0]:selected==='cloud'?'[F] Cloudfront':selected==='romance'?'[F] Heartcatcher':selected==='lily'?'[F] Scarlet Requiem':selected==='star'?'[F] Astral Convergence':selected==='electro'?'[F] Overload Network':'[F] Tailwind Frenzy';updateHud()}function mainMenu(){if(document.getElementById('spectateControl'))document.getElementById('spectateControl').style.display='none';if(document.getElementById('teamLeaderboard')){document.getElementById('teamLeaderboard').style.display='none';document.getElementById('leaderboardToggle').style.display='none'}game.state='menu';$('overlay').style.display='none';$('hud').style.display='none';$('menuScreen').style.display='flex';$('best').textContent='🏆 Personal best: Wave '+(localStorage.getItem('stormboundBest')||1);selectClass(playerClassId)}function selectClass(cls){if(game.state==='play'||game.state==='upgrade')return;selected=cls;playerClassId=cls;document.querySelectorAll('.classCard').forEach(el=>el.classList.toggle('selected',el.dataset.class===cls));$('start').textContent='▶ PLAY '+(extraClasses[cls]?extraClasses[cls].name.toUpperCase():cls==='cloud'?'CLOUDWAVE':cls==='romance'?'ROMANCER':cls==='lily'?'DARK LILY':cls==='star'?'STARFALL':cls==='electro'?'ELECTROPULSER':'WINDMAN')}document.querySelectorAll('.classCard').forEach(el=>el.onclick=e=>{if(e.target.closest('.detailBtn'))return;selectClass(el.dataset.class)});document.querySelectorAll('.detailBtn').forEach(b=>b.onclick=e=>{e.stopPropagation();showClassDetails(b.dataset.detail)});$('enemyLog').onclick=showEnemyLog;$('start').onclick=reset;
 function infoOpen(html){$('overlay').style.display='flex';$('overlay').innerHTML='<div class="modal infoModal">'+html+'<div class="infoActions"><button id="closeInfo">← BACK TO CLASS SELECTION</button></div></div>';$('closeInfo').onclick=()=>{$('overlay').style.display='none'}}
-function showClassDetails(cls){let data={cloud:['☁️ Cloudwave','ATMOSPHERIC MAGE','Vapor Bolt: fluffy cloud projectiles splash nearby enemies on impact.','Cloudfront: enormous moving cloud, damaging and slowing enemies.',cloudUp],romance:['💗 Romancer','HEART MAGIC','Enchanted Heart: glowing heart projectiles can charm enemies on impact.','Heartcatcher: captures enemies and explodes after 5 seconds.',romanceUp],lily:['🥀 Dark Lily','DARK BLOOM MAGIC','Bloodthorn: crimson thorn petals inflict a damaging bleed over time.','Scarlet Requiem: a giant flower grows and pulses, then explodes to heal Dark Lily and release 20 tiny seeking flowers. Each deals 8% ATK damage and applies +35% damage taken for 3 seconds.',lilyUp],electro:['⚡ Electropulser','CHAIN LIGHTNING','Arc Chain: lightning strikes a target and jumps to nearby enemies, with diminishing damage per jump.','Overload Network: every enemy launches a chain that jumps to up to 6 more nearby enemies, with 40% longer reach than regular chains.',electroUp],star:['🌠 Starfall','CELESTIAL SORCERER','Stellar Scatter: fires 10 tiny white stars sequentially over 0.5 seconds, each dealing 15% attack damage. They spread toward one targeted enemy and travel straight without curving back.','Astral Convergence: a marked zone fills with sparkling starlight and repeatedly damages enemies, then explodes to stun them for 1.5 seconds.',starUp],wind:['🍃 Windman','GALE DUELIST','Twin Gale Blades: two sharp light-green projectiles arc outward in opposite directions, leaving vivid lime trails.','Tailwind Frenzy: -60% time between attacks for 3 seconds. Cooldown starts AFTER the buff ends; cooldown can never go below 5 seconds.',windUp],...Object.fromEntries(Object.entries(extraClasses).map(([k,v])=>[k,[v.emoji+' '+v.name,v.role,v.attack,v.ability,extraUp[k]]]))}[cls];infoOpen('<div class="sub">CLASS CODEX · '+data[1]+'</div><h1>'+data[0]+'</h1><div class="infoGrid"><div class="infoTile"><h3>⚔️ Automatic attack</h3><p>'+data[2]+'</p><p>Attack: 18 · Interval: 0.68s · Range: 510</p></div><div class="infoTile"><h3>✨ Active ability · F</h3><p>'+data[3]+'</p><p>Base cooldown: ' + (cls==='cloud'?12:cls==='romance'?14:cls==='lily'?13:cls==='star'?13:cls==='electro'?14:11) + 's</p></div><div class="infoTile"><h3>💨 Mobility</h3><p>WASD move · Shift teleport dash (220 units). Base HP: 120 · Speed: 235 · Dash cooldown: 4.5s</p></div><div class="infoTile"><h3>🎲 Upgrades</h3><p>'+universal.length+' universal upgrades and '+data[4].length+' class-specific upgrades.</p></div></div><h2>'+data[4].length+' Class-exclusive upgrades</h2><div class="infoGrid">'+data[4].map(u=>'<div class="infoTile"><strong>'+u[0]+' '+u[1]+'</strong><p>'+u[2]+'</p></div>').join('')+'</div>')}
+function showClassDetails(cls){let data={cloud:['☁️ Cloudwave','ATMOSPHERIC MAGE','Vapor Bolt: fluffy cloud projectiles splash nearby enemies on impact.','Cloudfront: enormous moving cloud, damaging and slowing enemies.',cloudUp],romance:['💗 Romancer','HEART MAGIC','Enchanted Heart: glowing heart projectiles can charm enemies on impact.','Heartcatcher: captures enemies and explodes after 5 seconds.',romanceUp],lily:['🥀 Dark Lily','DARK BLOOM MAGIC','Bloodthorn: crimson thorn petals inflict a damaging bleed over time.','Scarlet Requiem: a giant flower grows and pulses, then explodes to heal Dark Lily and release 20 tiny seeking flowers. Each deals 8% ATK damage and applies +35% damage taken for 3 seconds.',lilyUp],electro:['⚡ Electropulser','CHAIN LIGHTNING','Arc Chain: lightning strikes a target and jumps to nearby enemies, with diminishing damage per jump.','Overload Network: every enemy launches a chain that jumps to up to 6 more nearby enemies, with 40% longer reach than regular chains.',electroUp],star:['🌠 Starfall','CELESTIAL SORCERER','Stellar Scatter: fires 10 tiny white stars sequentially over 0.5 seconds, each dealing 15% attack damage. They spread toward one targeted enemy and travel straight without curving back.','Astral Convergence: a marked zone fills with sparkling starlight and repeatedly damages enemies, then explodes to stun them for 1.5 seconds.',starUp],wind:['🍃 Windman','GALE DUELIST','Twin Gale Blades: two sharp light-green projectiles arc outward in opposite directions, leaving vivid lime trails.','Tailwind Frenzy: -60% time between attacks for 3 seconds. Cooldown starts AFTER the buff ends; cooldown can never go below 5 seconds.',windUp],...Object.fromEntries(Object.entries(extraClasses).map(([k,v])=>[k,[v.emoji+' '+v.name,v.role,v.attack,v.ability,extraUp[k]]]))}[cls];infoOpen('<div class="sub">CLASS CODEX · '+data[1]+'</div><h1>'+data[0]+'</h1><div class="infoGrid"><div class="infoTile"><h3>⚔️ Automatic attack</h3><p>'+data[2]+'</p><p>Attack stats vary by class · Range: 510</p></div><div class="infoTile"><h3>✨ Active ability · F</h3><p>'+data[3]+'</p><p>Base cooldown: ' + (cls==='cloud'?12:cls==='romance'?14:cls==='lily'?13:cls==='star'?13:cls==='electro'?14:11) + 's</p></div><div class="infoTile"><h3>💨 Mobility</h3><p>WASD move · Shift teleport dash (220 units). Base HP: 120 · Speed: 235 · Dash cooldown: 4.5s</p></div><div class="infoTile"><h3>🎲 Upgrades</h3><p>'+universal.length+' universal upgrades and '+data[4].length+' class-specific upgrades.</p></div></div><h2>'+data[4].length+' Class-exclusive upgrades</h2><div class="infoGrid">'+data[4].map(u=>'<div class="infoTile"><strong>'+u[0]+' '+u[1]+'</strong><p>'+u[2]+'</p></div>').join('')+'</div>')}
 const advancedEnemies=[
 ['🕸️','Snarer','HIGH',10,72,70,12,'Shoots slowing webs that hinder your movement.','Keep moving and dash away from web shots.','snarer','#c9b4ff'],
 ['🦇','Leech','HIGH',15,95,108,13,'Drains health on contact to restore itself.','Eliminate before it reaches you.','leech','#e16f99'],
@@ -561,7 +591,19 @@ const botDialogue={
  thorn:['I am lining up a thorn crescent.','Thorn Dominion can pull them together!','Let them walk into the vines.','My roots have them covered.'],
  chrono:['I can replay this attack!','Temporal Echo is nearly ready.','Timing is everything.','I am setting up a delayed strike.'],
  prism:['Mirror Array is ready!','I can refract through that crowd.','I am setting up the mirrors.','This is going to be a dazzling hit.'],
- gravity:['Bring them into my orbit!','Orbital Capture is ready!','I can pull the whole cluster in.','The satellites are doing work!']
+ gravity:['Bring them into my orbit!','Orbital Capture is ready!','I can pull the whole cluster in.','The satellites are doing work!'],
+ rune:['These runes are about to connect!', 'I can trace their weak points.', 'Runic relay, coming through!'],
+ tide:['Riding the next wave!', 'Ocean magic never misses a tide.', 'I can surf right through them!'],
+ puppet:['Time to pull some strings!', 'Everybody into my web!', 'That group is tangled!'],
+ glass:['Three seconds until they shatter!', 'My prism is perfectly cut.', 'Watch the crystal countdown!'],
+ myco:['The spores are spreading!', 'My mushrooms have excellent teamwork.', 'One infection, many targets!'],
+ sand:['Catch me if you can!', 'I am steering through the dunes!', 'Sandstorm express, coming through!'],
+ sonic:['Locking onto the loudest target!', 'Resonance beam, stay focused!', 'I can hear their footsteps!'],
+ lantern:['Paper blades, take flight!', 'My shurikens are unfolding!', 'A thousand cuts, one lantern!'],
+ magnet:['You two are now connected!', 'Polarity is on my side.', 'Magnetic implosion incoming!'],
+ dream:['Is that me, or my illusion?', 'The dream decoy is ready!', 'They fell for the illusion!'],
+ comet:['Meteor incoming!', 'The sky has a delivery!', 'Impact in three... two...'],
+ alchem:['Crimson solvent is brewing!', 'Stay in the puddle, please!', 'The flask is ready to fly!']
  }
 };
 const chooseDialogue=arr=>arr[Math.floor(Math.random()*arr.length)];
@@ -815,6 +857,8 @@ function shoot(){const cls=p.id||playerClassId;let targets=enemies.filter(e=>!e.
 function ability(){const cls=p.id||playerClassId;if(game.state!=='play'||p.abilityTimer>0||(cls==='wind'&&p.windActive>0))return;if(cls==='wind'){p.windActive=p.windDuration*p.abilityDuration;p.abilityTimer=0;say('🍃 TAILWIND FRENZY · -'+Math.round(Math.min(.85,p.windBonus)*100)+'% ATTACK INTERVAL');particlesAt(p.x,p.y,'#baff5d',32);return}p.abilityTimer=p.abilityCd;let dx=p.faceX,dy=p.faceY;if(extraClasses[cls]){extraAbility();return}if(cls==='electro'){let alive=enemies.filter(e=>!e.dead);for(let e of alive){effects.push({owner:p,kind:'lightning',x:p.x,y:p.y,tx:e.x,ty:e.y,life:.38,fullLife:.38,seed:rand(0,1000)});chainLightning(e,p.damage*1.2*p.abilityPower*p.electroActivePower,p.electroJumps+p.electroActiveJumps,p.electroRange*p.electroActiveRange,p.electroFalloff,new Set())}particlesAt(p.x,p.y,'#b6faff',50);say('⚡ OVERLOAD NETWORK')}else if(cls==='cloud'){for(let i=0;i<1+p.abilityExtra;i++){let spread=(i-(p.abilityExtra/2))*.22,cs=Math.cos(spread),sn=Math.sin(spread),vx=dx*cs-dy*sn,vy=dx*sn+dy*cs;effects.push({owner:p,kind:'cloud',x:p.x+vx*75,y:p.y+vy*75,r:125*p.cloudSize,life:5*p.cloudLife*p.abilityDuration,tick:0,vx:vx*155*p.cloudDrift,vy:vy*155*p.cloudDrift,phase:rand(0,7)})}say('☁️ CLOUDFRONT')}else if(cls==='star'){let cx=p.x,cy=p.y;effects.push({owner:p,kind:'starzone',x:clamp(cx,90,world.w-90),y:clamp(cy,90,world.h-90),r:140*p.starRadius,life:3.4*p.starDuration,fullLife:3.4*p.starDuration,age:0,tick:0,phase:0});say('🌠 ASTRAL CONVERGENCE');particlesAt(cx,cy,'#9e9dff',28)}else if(cls==='lily'){effects.push({owner:p,kind:'lily',x:p.x,y:p.y,r:155*p.lilyRadius,life:5*p.lilyDuration,fullLife:5*p.lilyDuration,age:0,tick:0,phase:0,hit:new Set()});say('🥀 SCARLET REQUIEM')}else{for(let i=0;i<1+p.abilityExtra;i++){let spread=(i-p.abilityExtra/2)*.19,cs=Math.cos(spread),sn=Math.sin(spread),vx=dx*cs-dy*sn,vy=dx*sn+dy*cs;effects.push({owner:p,kind:'heartcatch',x:p.x+vx*55,y:p.y+vy*55,r:53*p.heartRadius,life:5*p.heartDuration,tick:0,vx:vx*175,vy:vy*175,caught:new Set(),phase:rand(0,6.28),age:0,trail:[],lastX:p.x,lastY:p.y})}say('💗 HEARTCATCHER')}particlesAt(p.x,p.y,cls==='cloud'?'#a4efff':'#ffa2da',26)}
 function dash(){if(game.state!=='play'||p.dashTimer>0)return;let mx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+joy.x,my=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0)+joy.y,mag=Math.hypot(mx,my);let dx=mag?mx/mag:p.faceX,dy=mag?my/mag:p.faceY;particlesAt(p.x,p.y,selected==='cloud'?'#a9f4ff':'#ffa0dc',22);p.x=clamp(p.x+dx*220,p.r,world.w-p.r);p.y=clamp(p.y+dy*220,p.r,world.h-p.r);p.inv=Math.max(p.inv,.35);p.dashTimer=p.dashCd;particlesAt(p.x,p.y,'#ffffff',22)}
 const universal=[
+['⚔️','Battle Conditioning','Basic attack damage +15%',()=>p.damage*=1.15],
+['⚡','Reflex Training','Attack interval -10%',()=>p.rate=Math.max(.12,p.rate*.9)],
 ['⚔️','Power Training','Damage +20%',()=>p.damage*=1.2],['⚡','Quick Hands','Attack 15% faster',()=>p.rate=Math.max(.12,p.rate*.85)],['⏳','Swift Casting','Active cooldown -15%',()=>p.abilityCd=Math.max(5,p.abilityCd*.85)],['🎯','Long Reach','Attack range +20%',()=>p.range*=1.2],['🪽','Fleet Foot','Movement speed +12%',()=>p.speed*=1.12],['✨','Extra Projectile','Fire +1 projectile',()=>p.projectiles++],['🧭','Homing Shots','Projectiles steer toward targets',()=>p.homing=Math.min(9,p.homing+1)],['💗','Vitality','Maximum HP +30 and heal 30',()=>{p.maxhp+=30;p.hp=Math.min(p.maxhp,p.hp+30)}],['🛡️','Armor Plating','Damage taken -9%',()=>p.armor=Math.min(.8,p.armor+.09)],['🍃','Regeneration','Regenerate 1.3 HP per second',()=>p.regen+=1.3],['🎲','Critical Focus','Critical chance +7%',()=>p.crit=Math.min(.85,p.crit+.07)],['💥','Critical Force','Critical damage +30%',()=>p.critDmg+=.3],['🚀','Projectile Velocity','Projectile speed +25%',()=>p.shotSpeed*=1.25],['🧲','Magnetism','XP pickup radius +65',()=>p.pickup+=65],['🪄','Arcane Focus','Active ability damage +25%',()=>p.abilityPower*=1.25],['💨','Blink Training','Dash cooldown -15%',()=>p.dashCd=Math.max(.65,p.dashCd*.85)],['⌛','Lingering Magic','Active effect duration +25%',()=>p.abilityDuration*=1.25],['🔱','Piercing Shot','Projectiles pierce +1 enemy',()=>p.pierce++],['🔗','Ricochet','Projectiles bounce +1 time',()=>p.bounce++],['🩸','Life Drain','Heal 2% of damage dealt',()=>p.leech+=.02],['💨','Evasion Training','Move speed +8%, armor +3%',()=>{p.speed*=1.08;p.armor=Math.min(.8,p.armor+.03)}],['💪','Fortitude','Maximum HP +18, armor +4%',()=>{p.maxhp+=18;p.hp+=18;p.armor=Math.min(.8,p.armor+.04)}],['🎇','Overcharge','Damage +12%, crit chance +4%',()=>{p.damage*=1.12;p.crit=Math.min(.85,p.crit+.04)}],['🌟','Spell Accelerator','Active cooldown -8%, attack speed +8%',()=>{p.abilityCd=Math.max(5,p.abilityCd*.92);p.rate=Math.max(.12,p.rate*.92)}]];
 const cloudUp=[['🌫️','Dense Nimbus','Cloud damage +35%',()=>p.abilityPower*=1.35],['🌪️','Wide Cloudbank','Cloud radius +30%',()=>p.cloudSize*=1.3],['☁️','Twin Nimbus','Summon +1 cloud per cast',()=>p.abilityExtra++],['🌧️','Heavy Rain','Cloud damage ticks 20% faster',()=>p.cloudTick=Math.max(.12,p.cloudTick*.8)],['💨','Jet Stream','Clouds chase enemies faster',()=>p.cloudDrift*=1.65],['🧊','Cold Front','Clouds slow enemies 15% more',()=>p.cloudSlow=Math.min(.85,p.cloudSlow+.15)],['🌩️','Thundercloud','Cloud hits add a lightning strike',()=>p.cloudLightning+=.2],['🌦️','Vapor Cascade','Clouds last 30% longer',()=>p.cloudLife*=1.3],['💣','Pressure Burst','Clouds explode when they expire',()=>p.cloudBurst+=1],['🌊','Tidal Vapor','Clouds deal +20% damage and grow 10%',()=>{p.abilityPower*=1.2;p.cloudSize*=1.1}],['🌀','Sky Swarm','Summon another cloud, but reduce cooldown 5%',()=>{p.abilityExtra++;p.abilityCd=Math.max(5,p.abilityCd*.95)}],['⚡','Storm Core','Lightning chance +25%, cloud ticks 10% faster',()=>{p.cloudLightning+=.25;p.cloudTick=Math.max(.12,p.cloudTick*.9)}]];
 const romanceUp=[['💘','Piercing Affection','Heart projectiles deal +25% damage',()=>p.heartDamage*=1.25],['💞','Heartstorm','Fire an additional heart projectile',()=>p.heartProjectiles++],['💓','Longing','Charm lasts 35% longer',()=>p.heartDuration*=1.35],['🌹','Rose Bloom','Heartcatcher size +30%',()=>p.heartRadius*=1.3],['💌','Love Letters','Heart hits can charm enemies briefly',()=>p.heartSpread+=.12],['💖','Healing Affection','Heartcatcher heals 6 HP per captured enemy',()=>p.heartHeal+=6],['💝','Heart Echo','Heartcatcher explosion repeats after a delay',()=>p.heartEcho++],['🎀','Enchanted Hearts','Charmed enemies take +25% heart damage',()=>p.heartChain+=.25],['💗','Sweet Embrace','Captured enemies take +20% explosion damage',()=>p.heartSlow+=.2],['💥','Heartbreak','Charmed enemies explode on defeat',()=>p.heartExplosion++],['🌸','Adoration','Charm lasts +1 second',()=>p.heartCharm+=1],['💕','Aura of Affection','Nearby enemies take periodic heart damage',()=>p.heartAura++]];
@@ -944,9 +988,187 @@ const extraUp={};for(let [key,v] of Object.entries(extraClasses)){extraUp[key]=[
 ['🪄','Master Casting','Ability strength +35%',()=>p.abilityPower*=1.35],
 ['👑','Ascended '+v.name,'Attack and ability power +15%',()=>{p.extraPower*=1.15;p.abilityPower*=1.15}]
 ]}
+const NEW_CLASS_IDS=["rune", "tide", "puppet", "glass", "myco", "sand", "sonic", "lantern", "magnet", "dream", "comet", "alchem"];
+
+const newClassUpgrades={};
+for(const [id,cls] of Object.entries(extraClasses)){
+ if(!NEW_CLASS_IDS.includes(id))continue;
+ const short=cls.name;
+ newClassUpgrades[id]=[
+ ['🔮',short+' Mastery','Signature attack deals 24% more damage',()=>p.extraPower*=1.24],
+ ['💠',short+' Resonance','Signature skill deals 28% more damage',()=>p.abilityPower*=1.28],
+ ['🌟',short+' Expansion','Signature skill radius increases 22%',()=>p.extraSize*=1.22],
+ ['🕰️',short+' Momentum','Signature skill lasts 25% longer',()=>p.extraDuration*=1.25],
+ ['🌀',short+' Acceleration','Signature skill triggers 22% faster',()=>p.extraTick*=1.22],
+ ['🎇',short+' Echo','Signature attack releases another fragment',()=>p.extraCount++],
+ ['⚡',short+' Rhythm','Attack interval reduced by 13%',()=>p.rate=Math.max(.16,p.rate*.87)],
+ ['✨',short+' Catalyst','Signature skill cooldown reduced by 16%',()=>p.abilityCd=Math.max(4,p.abilityCd*.84)]
+ ];
+}
+for(const id of NEW_CLASS_IDS)extraUp[id]=newClassUpgrades[id];
+// Additional named, class-specific upgrade paths for each new combat concept.
+extraUp['rune'].push(
+['📜','Ancient Alphabet','Sigil strikes mark enemies longer',()=>p.extraPower*=1.2],
+['🌊','Seven Seals','Cathedral covers a wider arena',()=>p.extraSize*=1.28],
+['🧵','Rapid Inscription','Runic detonations accelerate',()=>p.extraTick*=1.32],
+['🪞','Eternal Script','Cathedral persists longer',()=>p.extraDuration*=1.3]);
+extraUp['tide'].push(
+['📜','High Tide','Surfing wave grows wider',()=>p.extraSize*=1.28],
+['🌊','Undertow','Surfing wave turns more responsively',()=>p.extraTick*=1.3],
+['🧵','Deepwater Surge','Water crescents hit harder',()=>p.extraPower*=1.28],
+['🪞','Endless Current','Whirlpool lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['puppet'].push(
+['📜','Tightened Strings','Needle strings cut harder',()=>p.extraPower*=1.27],
+['🌊','Wider Web','Marionette strings reach farther',()=>p.extraSize*=1.28],
+['🧵','Frenzied Waltz','Web deals damage more often',()=>p.extraTick*=1.3],
+['🪞','Unbroken Threads','Waltz lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['glass'].push(
+['📜','Diamond Edges','Ricocheting shards deal more damage',()=>p.extraPower*=1.3],
+['🌊','Hall of Mirrors','Prism prison grows wider',()=>p.extraSize*=1.3],
+['🧵','Shatter Cascade','Prism explosion becomes stronger',()=>p.extraTick*=1.3],
+['🪞','Unbreakable Reflections','Crystal palace remains longer',()=>p.extraDuration*=1.3]);
+extraUp['myco'].push(
+['📜','Toxic Bloom','Spore infection grows stronger',()=>p.extraPower*=1.28],
+['🌊','Underground Network','Spore infection spreads farther',()=>p.extraSize*=1.3],
+['🧵','Rapid Germination','Fungal pulses happen faster',()=>p.extraTick*=1.3],
+['🪞','Perennial Colony','Fungal Kingdom lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['sand'].push(
+['📜','Razor Dunes','Returning sand crescents hit harder',()=>p.extraPower*=1.3],
+['🌊','Desert Horizon','Sandstorm grows wider',()=>p.extraSize*=1.3],
+['🧵','Grinding Winds','Sandstorm pulses more rapidly',()=>p.extraTick*=1.3],
+['🪞','Endless Drought','Sandstorm lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['sonic'].push(
+['📜','Perfect Pitch','Musical notes deal more damage',()=>p.extraPower*=1.28],
+['🌊','Amphitheater','Crescendo reaches farther',()=>p.extraSize*=1.3],
+['🧵','Double Tempo','Resonance rings pulse faster',()=>p.extraTick*=1.3],
+['🪞','Final Encore','Crescendo lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['lantern'].push(
+['📜','Guiding Flames','Lantern wisps strike harder',()=>p.extraPower*=1.3],
+['🌊','Beacon of Hope','Procession reaches farther',()=>p.extraSize*=1.3],
+['🧵','Spirit Chorus','Soul energy accumulates faster',()=>p.extraTick*=1.3],
+['🪞','Eternal Vigil','Paper Tempest lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['magnet'].push(
+['📜','Charged Discs','Magnetic discs strike harder',()=>p.extraPower*=1.3],
+['🌊','Strong Field','Magnetic bond reaches farther',()=>p.extraSize*=1.3],
+['🧵','Accelerated Poles','Polarity changes faster',()=>p.extraTick*=1.3],
+['🪞','Residual Magnetism','Magnetic implosion charges longer',()=>p.extraDuration*=1.3]);
+extraUp['dream'].push(
+['📜','Lucid Strike','Dream butterflies hit harder',()=>p.extraPower*=1.3],
+['🌊','Endless Hallways','Dream decoy attracts from farther away',()=>p.extraSize*=1.3],
+['🧵','Hypnotic Rhythm','Dream pulses strike faster',()=>p.extraTick*=1.3],
+['🪞','Deep Slumber','Dream decoy lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['comet'].push(
+['📜','Starfire Tips','Comet spears burn brighter',()=>p.extraPower*=1.3],
+['🌊','Meteor Shower','Bombardment covers more space',()=>p.extraSize*=1.3],
+['🧵','Falling Stars','Meteors fall more rapidly',()=>p.extraTick*=1.3],
+['🪞','Long Night','Meteor Parade lasts longer',()=>p.extraDuration*=1.3]);
+extraUp['alchem'].push(
+['📜','Volatile Mixture','Potion explosions hit harder',()=>p.extraPower*=1.3],
+['🌊','Giant Cauldron','Transmutation covers more space',()=>p.extraSize*=1.3],
+['🧵','Catalyst Reaction','Elemental flasks burst faster',()=>p.extraTick*=1.3],
+['🪞','Stable Formula','Transmutation lasts longer',()=>p.extraDuration*=1.3]);
+
+
+function newClassBolt(a,speed,dmg,kind,r=7,extra={}){
+ shots.push({owner:p,x:p.x,y:p.y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:(p.range/speed+.4)*p.shotLifetime,
+ damage:dmg,r:r*p.shotSize,kind,pierce:p.pierce,bounce:p.bounce,hit:new Set(),...extra});
+}
+function newClassEffect(kind,x,y,life,r,extra={}){
+ specialFx.push({kind,x,y,age:0,life,initialLife:life,r:r*p.extraSize,owner:p,
+ damage:p.damage*p.abilityPower,period:0,angle:0,...extra});
+}
+function newClassPulse(f,radius,damage,kind=''){
+ for(const e of enemies){
+  if(e.dead||distance(e,f)>radius+e.r)continue;
+  harm(e,damage);
+  if(kind==='slow')addStatus(e,'slow',1.5,.4);
+  if(kind==='burn')addStatus(e,'burn',2,damage*.13);
+  if(kind==='vulnerable')addStatus(e,'vulnerable',2,.22);
+  if(kind==='root')addStatus(e,'root',.7,.3);
+ }
+}
+function newClassTarget(x,y,range=550){
+ return enemies.filter(e=>!e.dead&&Math.hypot(e.x-x,e.y-y)<range).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];
+}
+function newClassShoot(cls,targets){
+ const t=targets[0],a=Math.atan2(t.y-p.y,t.x-p.x),power=p.damage*p.extraPower;
+ const n=Math.min(4,Math.max(1,p.projectiles+p.extraCount));
+ if(cls==='rune'){
+  for(let i=0;i<n;i++){const e=targets[i%targets.length];harm(e,power*.95);
+   newClassEffect('glyph',e.x,e.y,.55,29,{target:e,spin:i*1.8,hitDone:true});addStatus(e,'vulnerable',1.2,.12)}
+ }else if(cls==='tide'){
+  for(let i=0;i<n;i++)newClassBolt(a+(i-(n-1)/2)*.09,510,power*.62,'tideWave',7,{pierce:1+p.pierce,splash:0});
+ }else if(cls==='puppet'){
+  for(let i=0;i<n;i++){const e=targets[i%targets.length];harm(e,power*.65);addStatus(e,'slow',.85,.25);
+   newClassEffect('string',p.x,p.y,.35,18,{target:e,source:p})}
+ }else if(cls==='glass'){
+  for(let i=0;i<n;i++)newClassBolt(a+(i-(n-1)/2)*.16,690,power*.65,'glassShard',8,{bounce:p.bounce});
+ }else if(cls==='myco'){
+  for(let i=0;i<n;i++){const e=targets[i%targets.length];harm(e,power*.58);addStatus(e,'burn',2.3,power*.16);markEnemyFx(e,'myco',2.3);
+   newClassEffect('spore',e.x,e.y,.85,26,{target:e});for(const near of enemies.filter(z=>!z.dead&&z!==e&&distance(z,e)<70).slice(0,2)){harm(near,power*.23);addStatus(near,'burn',1.6,power*.08);markEnemyFx(near,'myco',1.6)}}
+ }else if(cls==='sand'){
+  for(let i=0;i<n;i++)newClassEffect('sandBlade',p.x,p.y,1.05,20,{vx:Math.cos(a+i*.17)*560,vy:Math.sin(a+i*.17)*560,source:p,hit:new Set(),damage:power*.65});
+ }else if(cls==='sonic'){
+  for(let i=0;i<n;i++)newClassEffect('note',p.x,p.y,.55,25,{vx:Math.cos(a+i*.11)*590,vy:Math.sin(a+i*.11)*590,hit:new Set(),damage:power*.8});
+ }else if(cls==='lantern'){
+  for(let i=0;i<n;i++)newClassEffect('firefly',p.x,p.y,1.4,13,{target:targets[i%targets.length],speed:440,damage:power*.95});
+ }else if(cls==='magnet'){
+  for(let i=0;i<n;i++)newClassBolt(a+(i-(n-1)/2)*.09,520,power*.84,'magDisc',12,{bounce:2+p.bounce});
+ }else if(cls==='dream'){
+  for(let i=0;i<n;i++)newClassEffect('butterfly',p.x,p.y,1.45,14,{target:targets[i%targets.length],phase:i*2,damage:power*.78});
+ }else if(cls==='comet'){
+  for(let i=0;i<n;i++)newClassBolt(a+(i-(n-1)/2)*.1,780,power*.68,'cometSpear',9,{pierce:p.pierce});
+ }else if(cls==='alchem'){
+  for(let i=0;i<n;i++)newClassBolt(a+(i-(n-1)/2)*.18,440,power*.62,'potion',10,{splash:32,element:i%3});
+ }
+}
+function skillSteer(actor,angle,dt,turn=7){
+ let x=0,y=0;
+ if(actor.index===undefined){
+  x=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+joy.x;
+  y=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0)+joy.y;
+ }else{x=actor.steerX||0;y=actor.steerY||0}
+ if(Math.hypot(x,y)<.16)return angle;
+ const desired=Math.atan2(y,x);
+ const diff=Math.atan2(Math.sin(desired-angle),Math.cos(desired-angle));
+ return angle+Math.max(-turn*dt,Math.min(turn*dt,diff));
+}
+function newClassAbility(cls){
+ const target=p.abilityAimTarget&&!p.abilityAimTarget.dead?p.abilityAimTarget:newClassTarget(p.x,p.y);
+ const tx=target?target.x:p.x+p.faceX*140,ty=target?target.y:p.y+p.faceY*140;
+ const duration=p.extraDuration;
+ if(cls==='rune'){
+  newClassEffect('runeChain',tx,ty,5*duration,65,{period:.05,step:0,hit:new Set()});
+ }else if(cls==='tide'){
+  p.skillSteering=true;newClassEffect('tidalSurf',p.x,p.y,2.1*duration,90,{period:0,source:p,angle:Math.atan2(p.faceY,p.faceX),hit:new Set()});
+ }else if(cls==='puppet'){
+  newClassEffect('puppetWeb',tx,ty,3.6*duration,170,{period:0,targets:[],phase:0,hit:new Set(),thrown:false,throwTime:0});
+ }else if(cls==='glass'){
+  newClassEffect('glassPrism',tx,ty,3.05*duration,135,{period:0,targets:[],exploded:false});
+ }else if(cls==='myco'){
+  newClassEffect('mycoSeed',tx,ty,7*duration,22,{period:0,infected:new Map(),spreadTimer:0});
+ }else if(cls==='sand'){
+  p.skillSteering=true;newClassEffect('sandDash',p.x,p.y,1.3*duration,34,{period:0,angle:Math.atan2(p.faceY,p.faceX),source:p,hit:new Set()});
+ }else if(cls==='sonic'){
+  newClassEffect('sonicBeam',p.x,p.y,3.3*duration,42,{period:0,angle:Math.atan2(p.faceY,p.faceX),source:p,hit:new Set()});
+ }else if(cls==='lantern'){
+  newClassEffect('paperStorm',p.x,p.y,2.2*duration,35,{period:0,source:p,angle:Math.atan2(p.faceY,p.faceX),wave:0,launched:0});
+ }else if(cls==='magnet'){
+  newClassEffect('magnetCrush',tx,ty,3.4*duration,190,{period:0,targets:enemies.filter(e=>!e.dead&&Math.hypot(e.x-tx,e.y-ty)<230*p.extraSize).slice(0,8),burst:false});
+ }else if(cls==='dream'){
+  newClassEffect('dreamDecoy',tx,ty,5.5*duration,32,{period:0,source:p,stored:0,shattered:false});
+ }else if(cls==='comet'){
+  newClassEffect('cometImpact',tx,ty,1.8*duration,110,{period:0,step:0});
+ }else if(cls==='alchem'){
+  newClassEffect('acidFlask',p.x,p.y,3.2*duration,24,{period:0,source:p,target:target,tx,ty,launched:false,hit:new Set()});
+ }
+ say(extraClasses[cls].emoji+' '+extraClasses[cls].ability.split(':')[0].toUpperCase());
+ particlesAt(p.x,p.y,extraClasses[cls].color,24);
+}
 function extraShoot(targets){
  const cls=p.id||playerClassId;
  const t=targets[0], count=Math.max(1,p.projectiles+p.extraCount), power=p.damage*p.extraPower;
+ if(NEW_CLASS_IDS.includes(cls)){newClassShoot(cls,targets);return}
  const aim=(e)=>Math.atan2(e.y-p.y,e.x-p.x);
  const bolt=(x,y,a,speed,dmg,kind,r=6,pierce=0)=>shots.push({owner:p,x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:(p.range/speed+.3)*p.shotLifetime,damage:dmg,r:r*p.shotSize,kind,pierce:p.pierce+pierce,bounce:p.bounce,hit:new Set(),target:t});
  if(cls==='frost'){
@@ -989,6 +1211,7 @@ else specialFx.push({kind:'satellite',x:p.x,y:p.y,angle:game.time*2+i*Math.PI*2/
 let specialFx=[],history=[];
 function extraAbility(){
  const type=p.id||playerClassId, duration=p.extraDuration, power=p.abilityPower;
+ if(NEW_CLASS_IDS.includes(type)){newClassAbility(type);return}
  const make=(kind,data)=>specialFx.push({kind,age:0,life:4*duration,...data});
  if(type==='frost'){
   let dx=p.faceX||1,dy=p.faceY||0;
@@ -1015,10 +1238,11 @@ function markEnemyFx(enemy,kind,duration=1.2){
  enemy.skillFx[kind]=Math.max(enemy.skillFx[kind]||0,duration);
 }
 function updateCombatStatuses(dt){
- for(const e of enemies){if(e.dead||!e.statuses)continue;
+ for(const e of enemies){if(e.dead)continue;e.acidDrip=Math.max(0,(e.acidDrip||0)-dt);if(!e.statuses)continue;
   for(const [kind,st] of Object.entries(e.statuses)){
    st.time-=dt;
    if(kind==='burn'&&st.time>0){st.tick-=dt;if(st.tick<=0){st.tick+=.5;let damage=Math.max(1,st.potency);e.hp-=damage;e.flash=Math.max(e.flash,.08);hitText(e,damage,false,'burn');if(e.hp<=0)kill(e)}}
+   if(kind==='bleed'&&st.time>0){st.tick-=dt;if(st.tick<=0){st.tick+=.5;const damage=Math.max(.5,st.potency);e.hp-=damage;e.flash=Math.max(e.flash,.06);hitText(e,damage,false,'bleed');if(e.hp<=0)kill(e)}}
    if(kind==='root'&&st.time>0)e.stun=Math.max(e.stun||0,Math.min(.09,st.time));
    if(st.time<=0){delete e.statuses[kind];if(kind==='burn')e.burn=0;if(kind==='vulnerable')e.vulnerable=0;}
   }
@@ -1026,7 +1250,404 @@ function updateCombatStatuses(dt){
  for(const t of combatText){t.life-=dt;t.y-=dt*37;}
  combatText=combatText.filter(t=>t.life>0);
 }
-function extraTickEffects(dt){
+
+function tickNewClassEffects(dt){
+ for(const f of specialFx){
+  if(!f.kind||!NEW_EFFECT_KINDS.has(f.kind))continue;
+  const t=f.age,frac=t/(f.initialLife||1),pow=f.damage;
+  if(['sandBlade','note','firefly','butterfly'].includes(f.kind)){
+   if(f.kind==='sandBlade'){
+    const back=t>.5?-1:1;f.x+=f.vx*dt*back;f.y+=f.vy*dt*back;
+   }else if(f.kind==='note'){f.x+=f.vx*dt;f.y+=f.vy*dt}
+   else{
+    let e=f.target&&!f.target.dead?f.target:newClassTarget(f.x,f.y,330);
+    if(e){const a=Math.atan2(e.y-f.y,e.x-f.x)+(f.kind==='butterfly'?Math.sin(t*17+f.phase)*.35:0);
+     f.x+=Math.cos(a)*dt*(f.kind==='firefly'?440:330);
+     f.y+=Math.sin(a)*dt*(f.kind==='firefly'?440:330)}
+   }
+   const hits=enemies.filter(e=>!e.dead&&distance(e,f)<e.r+f.r);
+   for(const e of hits){
+    if(f.hit&&f.hit.has(e))continue;
+    harm(e,f.damage);if(f.hit)f.hit.add(e);else f.life=0;
+    if(f.kind==='note')addStatus(e,'vulnerable',1.4,.15);
+    if(f.kind==='butterfly')addStatus(e,'slow',1.4,.3);
+    particlesAt(e.x,e.y,extraClasses[p.id].color,5);
+   }
+  }
+
+
+
+
+  if(f.kind==='puppetWeb'){
+   if(f.phase===0){
+    f.phase=1;f.targets=enemies.filter(e=>!e.dead&&distance(e,f)<f.r+e.r).slice(0,10);
+    for(const e of f.targets){e.stun=Math.max(e.stun||0,.22);markEnemyFx(e,'webbed',1.9)}
+   }
+   f.period-=dt;
+   if(f.period<=0){f.period=.28;
+    for(const e of f.targets)if(!e.dead){harm(e,pow*.085);markEnemyFx(e,'webbed',.4)}
+   }
+   const pullPhase=Math.min(1,Math.max(0,(f.age-.24)/1.25));
+   if(f.age<1.5){
+    for(const e of f.targets)if(!e.dead){
+     const dx=f.x-e.x,dy=f.y-e.y,d=Math.hypot(dx,dy)||1;
+     const speed=95+100*pullPhase;
+     const step=Math.min(Math.max(0,d-35),speed*dt);
+     e.x=clamp(e.x+dx/d*step,e.r,world.w-e.r);
+     e.y=clamp(e.y+dy/d*step,e.r,world.h-e.r);
+     e.stun=Math.max(e.stun||0,.13);
+    }
+   }else{
+    if(!f.thrown){f.thrown=true;f.throwTime=0;f.throwDirections=new Map();
+     for(const [i,e] of f.targets.entries())if(!e.dead){
+      const a=Math.atan2(e.y-f.y,e.x-f.x)+(i-f.targets.length/2)*.17;
+      f.throwDirections.set(e,a);
+     }
+    }
+    f.throwTime+=dt;
+    const speed=150+Math.min(1,f.throwTime/.7)*230;
+    for(const e of f.targets)if(!e.dead){
+     const a=f.throwDirections.get(e)||0;
+     e.x=clamp(e.x+Math.cos(a)*speed*dt,e.r,world.w-e.r);
+     e.y=clamp(e.y+Math.sin(a)*speed*dt,e.r,world.h-e.r);
+     if(!f.hit.has(e)){harm(e,pow*.7);f.hit.add(e)}
+    }
+    if(f.throwTime>1.05)f.life=0;
+   }
+   continue;
+  }
+  if(f.kind==='glassPrism'){
+   if(!f.captured){
+    f.captured=true;
+    f.targets=enemies.filter(e=>!e.dead&&distance(e,f)<f.r+e.r).slice(0,8);
+    for(const e of f.targets){e.stun=Math.max(e.stun||0,.2);markEnemyFx(e,'prism',3.2)}
+   }
+   if(f.age>=3&&!f.exploded){
+    f.exploded=true;
+    for(const e of f.targets)if(!e.dead){
+     harm(e,pow*1.15);addStatus(e,'slow',3,.48);
+     newClassEffect('prismBurst',e.x,e.y,.65,45,{});
+     particlesAt(e.x,e.y,'#b7f5ff',12);
+    }
+    f.life=0;
+   }
+   continue;
+  }
+  if(f.kind==='paperStorm'){
+   const actor=f.source||p;f.x=actor.x;f.y=actor.y;f.period-=dt;
+   // Throw each paper blade one at a time with visible spacing and rotation.
+   const count=15+Math.min(8,p.extraCount*2);
+   if(f.period<=0&&f.launched<count){
+    f.period=.105/Math.max(.6,p.extraTick);
+    const index=f.launched++,lane=index%15;
+    const a=f.angle+(lane-7)*.115+Math.sin(index*2.4)*.02;
+    const speed=355+index%3*20;
+    newClassBolt(a,speed,pow*.27,'paperShuriken',10,{pierce:1+p.pierce,bleed:pow*.06,spin:index*1.4,trail:[]});
+    if(index%3===0)particlesAt(actor.x,actor.y,'#fff0bd',3);
+   }
+   continue;
+  }
+  if(f.kind==='magnetCrush'){
+   f.period-=dt;
+   const active=f.targets.filter(e=>!e.dead);
+   if(f.period<=0&&!f.burst){f.period=.24;
+    for(const e of active){
+     const dx=f.x-e.x,dy=f.y-e.y,d=Math.hypot(dx,dy)||1;
+     e.x=clamp(e.x+dx/d*Math.min(125*dt,d),20,world.w-20);
+     e.y=clamp(e.y+dy/d*Math.min(125*dt,d),20,world.h-20);
+     e.stun=Math.max(e.stun||0,.35);
+     markEnemyFx(e,'magnetized',.45);
+     harm(e,pow*.15);
+    }
+   }
+   if(f.age>1.35&&!f.burst){
+    f.burst=true;
+    for(const e of active){
+     harm(e,pow*1.1);addStatus(e,'vulnerable',2.5,.24);
+     const a=Math.atan2(e.y-f.y,e.x-f.x);knockEnemy(e,a,130);
+    }
+    newClassEffect('magnetBurst',f.x,f.y,.6,f.r,{});
+    particlesAt(f.x,f.y,'#ff9ba6',35);f.life=0;
+   }
+   continue;
+  }
+  if(f.kind==='acidPuddle'){
+   f.period-=dt;
+   if(f.period<=0){f.period=.45/Math.max(.6,p.extraTick);
+    for(const e of enemies)if(!e.dead&&distance(e,f)<f.r+e.r){
+     const drain=Math.min(e.hp,f.drain);
+     harm(e,drain);addStatus(e,'slow',.7,.22);
+     e.acidDrip=Math.max(e.acidDrip||0,1.0);
+     if(f.source&&f.source.hp>0)f.source.hp=Math.min(f.source.maxhp,f.source.hp+drain*.14);
+    }
+   }
+   continue;
+  }
+  if(f.kind==='acidFlask'){
+   if(!f.launched){f.launched=true;f.x=f.source.x;f.y=f.source.y}
+   if(f.age<.55){
+    const u=Math.min(1,dt/Math.max(.02,.55-f.age));
+    const tx=f.target&&!f.target.dead?f.target.x:f.tx,ty=f.target&&!f.target.dead?f.target.y:f.ty;
+    f.x+=(tx-f.x)*u;f.y+=(ty-f.y)*u;
+   }else{
+    if(!f.splashed){
+     f.splashed=true;
+     f.x=f.target&&!f.target.dead?f.target.x:f.tx;
+     f.y=f.target&&!f.target.dead?f.target.y:f.ty;
+     for(const e of enemies)if(!e.dead&&distance(e,f)<72*p.extraSize){
+      f.hit.add(e);e.acidDrip=Math.max(e.acidDrip||0,3.5*p.extraDuration);
+      addStatus(e,'vulnerable',3.5,.18);
+     }
+     newClassEffect('acidPuddle',f.x,f.y,4.8*p.extraDuration,108,{period:0,source:f.source,affected:new Set(),drain:pow*.12});newClassEffect('acidSplash',f.x,f.y,.65,70,{});
+    }
+    f.period-=dt;
+    if(f.period<=0){f.period=.36/Math.max(.6,p.extraTick);
+     for(const e of f.hit)if(!e.dead){
+      const drain=Math.min(e.hp,pow*.24);
+      harm(e,drain);
+      f.source.hp=Math.min(f.source.maxhp,f.source.hp+drain*.28);
+      e.acidDrip=Math.max(e.acidDrip||0,.5);
+     }
+    }
+   }
+   continue;
+  }
+  if(f.kind==='acidSplash'||f.kind==='magnetBurst'||f.kind==='prismBurst')continue;
+  if(f.kind==='mycoSeed'){
+   f.spreadTimer-=dt;
+   if(f.spreadTimer<=0){
+    f.spreadTimer=.55/Math.max(.6,p.extraTick);
+    if(f.infected.size===0){
+     const first=newClassTarget(f.x,f.y,180*p.extraSize);
+     if(first)f.infected.set(first,0);
+    }
+    for(const [e,age] of [...f.infected]){
+     if(e.dead){f.infected.delete(e);continue}
+     f.infected.set(e,age+1);harm(e,pow*.21);markEnemyFx(e,'myco',.85);
+     if(age>=3){
+      const next=enemies.filter(z=>!z.dead&&!f.infected.has(z)&&distance(e,z)<115*p.extraSize)[0];
+      if(next&&f.infected.size<9)f.infected.set(next,0);
+     }
+    }
+   }
+   continue;
+  }
+  if(f.kind==='soulLedger'){
+   const actor=f.source||p;f.x=actor.x;f.y=actor.y;
+   f.period-=dt;
+   if(f.period<=0){f.period=.45;
+    // The lantern gathers spirit energy from wounded enemies, then converts it to healing.
+    const near=enemies.filter(e=>!e.dead&&distance(e,actor)<f.r);
+    f.stored=Math.min(actor.maxhp*.45,f.stored+near.length*1.8*p.abilityPower);
+   }
+   if(f.life<.15&&!f.release){
+    f.release=true;
+    const allies=[actor,...(coopMode?coopBots.filter(b=>b.alive):[])].filter(z=>z&&z.hp>0);
+    if(allies.length){const low=allies.sort((a,b)=>a.hp/a.maxhp-b.hp/b.maxhp)[0];
+     low.hp=Math.min(low.maxhp,low.hp+Math.max(12,f.stored));
+     particlesAt(low.x,low.y,'#fff5ac',26)}
+   }continue;
+  }
+  if(f.kind==='magnetLink'){
+   const pair=f.targets.filter(e=>!e.dead);
+   if(pair.length<2){f.life=0;continue}
+   const [a,b]=pair,dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1;
+   f.x=(a.x+b.x)/2;f.y=(a.y+b.y)/2;
+   const pull=85*dt; a.x=clamp(a.x+dx/d*pull,20,world.w-20);a.y=clamp(a.y+dy/d*pull,20,world.h-20);
+   b.x=clamp(b.x-dx/d*pull,20,world.w-20);b.y=clamp(b.y-dy/d*pull,20,world.h-20);
+   f.period-=dt;if(f.period<=0){f.period=.65/Math.max(.6,p.extraTick);
+    harm(a,pow*.35);harm(b,pow*.35)}
+   if(d<a.r+b.r+12){harm(a,pow*.9);harm(b,pow*.9);f.life=0;
+    particlesAt(f.x,f.y,'#ff9fa9',20)}
+   continue;
+  }
+  if(f.kind==='dreamDecoy'){
+   f.period-=dt;
+   if(f.period<=0){f.period=1/Math.max(.6,p.extraTick);
+    const near=enemies.filter(e=>!e.dead&&distance(e,f)<180*p.extraSize);
+    for(const e of near)harm(e,pow*.22);
+    f.stored+=near.length*1.5;
+    newClassEffect('dreamPulse',f.x,f.y,.42,180*p.extraSize,{});
+   }
+   if(f.life<.12&&!f.shattered){
+    f.shattered=true;
+    const near=enemies.filter(e=>!e.dead&&distance(e,f)<145*p.extraSize);
+    for(const e of near){harm(e,pow*.32);addStatus(e,'slow',2,.5)}
+    particlesAt(f.x,f.y,'#c3a7ff',32);
+   }continue;
+  }
+  if(f.kind==='mirrorAegis'){
+   const actor=f.source||p;f.x=actor.x;f.y=actor.y;f.angle+=dt*2.6;
+   // The crystal barrier absorbs enemy bullets rather than copying Prismancer's lasers.
+   for(const bolt of enemyBolts){
+    if(bolt.life<=0||distance(bolt,actor)>f.r+bolt.r)continue;
+    bolt.life=0;f.charges--;particlesAt(bolt.x,bolt.y,'#b5f8ff',10);
+    if(f.charges<=0){f.life=0;break}
+   }
+   // Nearby enemies take a small, one-time cut when touching the spinning glass.
+   for(const e of enemies)if(!e.dead&&!f.hit.has(e)&&distance(e,actor)<f.r+e.r){
+    harm(e,pow*.32);f.hit.add(e)}
+   continue;
+  }
+  if(f.kind==='tidalSurf'){
+   const actor=f.source||p;f.angle=skillSteer(actor,f.angle,dt,5.8);const dx=Math.cos(f.angle),dy=Math.sin(f.angle);
+   if(f.life<dt*1.5)actor.skillSteering=false;
+   actor.x=clamp(actor.x+dx*310*dt,actor.r,world.w-actor.r);
+   actor.y=clamp(actor.y+dy*310*dt,actor.r,world.h-actor.r);
+   actor.inv=Math.max(actor.inv,.09);f.x=actor.x;f.y=actor.y;f.wake??=[];f.wake.push({x:f.x,y:f.y,age:0});for(const w of f.wake)w.age+=dt;f.wake=f.wake.filter(w=>w.age<.6);
+   for(const e of enemies)if(!e.dead&&!f.hit.has(e)&&distance(e,actor)<f.r+e.r){
+    harm(e,pow*.9);addStatus(e,'slow',1.4,.35);f.hit.add(e)}
+   continue;
+  }
+  if(f.kind==='alchemyMix'){
+   f.period-=dt;
+   if(f.period<=0&&f.step<3){f.step++;f.period=.7/Math.max(.6,p.extraTick);
+    const actor=f.source||p;
+    if(f.step===1){ // Healing tonic: support without an AoE damage circle.
+     actor.hp=Math.min(actor.maxhp,actor.hp+Math.max(14,actor.maxhp*.13)*p.abilityPower);
+     newClassEffect('tonicFlash',actor.x,actor.y,.7,45,{});
+    }else if(f.step===2){ // Corrosive flask: a single marked enemy.
+     const e=newClassTarget(actor.x,actor.y,530);
+     if(e){harm(e,pow*1.1);addStatus(e,'vulnerable',3,.22);
+      newClassEffect('acidFlash',e.x,e.y,.8,32,{})}
+    }else{ // Quickening serum: short personal attack-speed buff.
+     actor.attackTimer=Math.min(actor.attackTimer,.1);
+     actor.alchemyHaste=Math.max(actor.alchemyHaste||0,3.3);
+     newClassEffect('tonicFlash',actor.x,actor.y,.7,55,{});
+    }
+   }continue;
+  }
+  if(f.kind==='cometImpact'){
+   if(f.age>=f.initialLife*.75&&!f.step){f.step=1;
+    for(const e of enemies)if(!e.dead&&distance(e,f)<f.r+e.r){
+     harm(e,pow*1.8);addStatus(e,'burn',2,pow*.15)}
+    particlesAt(f.x,f.y,'#ffbd68',36);
+   }continue;
+  }
+  if(['tonicFlash','acidFlash','dreamPulse'].includes(f.kind))continue;
+  if(f.kind==='runeChain'){
+   f.linkAge=Math.max(0,(f.linkAge||0)-dt);f.period-=dt;if(f.period<=0){f.period=.32/Math.max(.5,p.extraTick);
+    let target=newClassTarget(f.x,f.y,260*p.extraSize);
+    if(target){f.previous={x:f.x,y:f.y};f.linkAge=.32;harm(target,pow*.85);addStatus(target,'vulnerable',2,.18);
+     newClassEffect('runeSpark',target.x,target.y,.4,26,{});
+     f.x=target.x;f.y=target.y;f.step++;if(f.step>12)f.life=0}
+   }continue;
+  }
+  if(f.kind==='puppetControl'){
+   if(!f.puppet||f.puppet.dead)f.puppet=newClassTarget(f.x,f.y,260*p.extraSize);
+   const e=f.puppet;if(e){
+    f.x=e.x;f.y=e.y;
+    f.period-=dt;if(f.period<=0){f.period=.38/Math.max(.5,p.extraTick);
+     harm(e,pow*.38);addStatus(e,'slow',.8,.6);
+     const victim=enemies.filter(z=>!z.dead&&z!==e&&distance(z,e)<210).sort((a,b)=>distance(a,e)-distance(b,e))[0];
+     if(victim){const a=Math.atan2(victim.y-e.y,victim.x-e.x);knockEnemy(e,a,135);harm(victim,pow*.25)}
+    }
+   }continue;
+  }
+  if(f.kind==='glassTurret'){
+   f.period-=dt;if(f.period<=0){f.period=.62/Math.max(.5,p.extraTick);
+    const target=newClassTarget(f.x,f.y,450*p.extraSize);
+    if(target){const a=Math.atan2(target.y-f.y,target.x-f.x);
+     shots.push({owner:p,x:f.x,y:f.y,vx:Math.cos(a)*670,vy:Math.sin(a)*670,life:1,
+      damage:pow*.67,r:8,kind:'glassShard',pierce:0,bounce:1,hit:new Set()});
+     newClassEffect('glassFlash',f.x,f.y,.3,20,{})
+    }
+   }continue;
+  }
+  if(f.kind==='sandDash'){
+   const actor=f.source;if(actor){
+    f.angle=skillSteer(actor,f.angle,dt,7.5);if(f.life<dt*1.5)actor.skillSteering=false;
+    const speed=480;const vx=Math.cos(f.angle),vy=Math.sin(f.angle);
+    actor.x=clamp(actor.x+vx*speed*dt,actor.r,world.w-actor.r);
+    actor.y=clamp(actor.y+vy*speed*dt,actor.r,world.h-actor.r);
+    actor.inv=Math.max(actor.inv,.1);
+    f.x=actor.x;f.y=actor.y;f.wake??=[];f.wake.push({x:f.x,y:f.y,age:0});for(const w of f.wake)w.age+=dt;f.wake=f.wake.filter(w=>w.age<.5);
+    for(const e of enemies)if(!e.dead&&!f.hit.has(e)&&distance(e,actor)<e.r+48){
+     harm(e,pow*1.35);f.hit.add(e);addStatus(e,'slow',2,.4);
+     newClassEffect('sandFlash',e.x,e.y,.45,42,{})
+    }
+   }continue;
+  }
+  if(f.kind==='sonicBeam'){
+   const actor=f.source;if(actor){
+    f.x=actor.x;f.y=actor.y;
+    const near=enemies.filter(e=>!e.dead&&distance(e,actor)<690).sort((a,b)=>distance(a,actor)-distance(b,actor))[0];
+    if(near){
+     const targetAngle=Math.atan2(near.y-actor.y,near.x-actor.x);
+     const delta=Math.atan2(Math.sin(targetAngle-f.angle),Math.cos(targetAngle-f.angle));
+     f.angle+=clamp(delta,-dt*7.5,dt*7.5);
+    }
+    f.period-=dt;
+    if(f.period<=0){f.period=.11/Math.max(.5,p.extraTick);
+     const dx=Math.cos(f.angle),dy=Math.sin(f.angle);
+     for(const e of enemies)if(!e.dead){
+      const ax=e.x-f.x,ay=e.y-f.y,forward=ax*dx+ay*dy,side=Math.abs(ax*dy-ay*dx);
+      if(forward>0&&forward<650*p.extraSize&&side<27+e.r){harm(e,pow*.115);addStatus(e,'vulnerable',.8,.14)}
+     }
+    }
+   }continue;
+  }
+  if(f.kind==='dreamClone'){
+   f.period-=dt;if(f.period<=0){f.period=.5/Math.max(.5,p.extraTick);
+    const target=newClassTarget(f.x,f.y,420*p.extraSize);
+    if(target){const a=Math.atan2(target.y-f.y,target.x-f.x);
+     newClassEffect('butterfly',f.x,f.y,1.1,12,{target,phase:Math.random()*6.28,damage:pow*.48})}
+   }continue;
+  }
+  if(['runeSpark','glassFlash','sandFlash'].includes(f.kind))continue;
+  if(['glyph','spore','string'].includes(f.kind))continue;
+  if(f.period===undefined)continue;
+  f.period-=dt;
+  if(f.period>0)continue;
+  f.period=(f.kind==='meteors'?.35:.44)/Math.max(.4,p.extraTick);
+  f.step=(f.step||0)+1;
+  if(f.kind==='cathedral'){
+   const rad=f.r*(.25+.15*(f.step%5));newClassPulse(f,rad,pow*.35,'vulnerable');
+  }else if(f.kind==='maelstrom'){
+   f.x=clamp(f.x+f.vx*dt*10,50,world.w-50);f.y=clamp(f.y+f.vy*dt*10,50,world.h-50);
+   for(const e of enemies)if(!e.dead&&distance(e,f)<f.r){const d=distance(e,f)||1;
+    e.x=clamp(e.x+(f.x-e.x)/d*35*dt,20,world.w-20);e.y=clamp(e.y+(f.y-e.y)/d*35*dt,20,world.h-20)}
+   newClassPulse(f,f.r,pow*.23,'slow');
+  }else if(f.kind==='marionette'){
+   const targets=enemies.filter(e=>!e.dead&&distance(e,f)<f.r).slice(0,8);
+   for(const e of targets){const a=Math.atan2(f.y-e.y,f.x-e.x);knockEnemy(e,a,45);harm(e,pow*.2);addStatus(e,'slow',.6,.4)}
+  }else if(f.kind==='palace'){
+   const ring=(f.step%4+1)*f.r/4;
+   for(const e of enemies)if(!e.dead&&Math.abs(distance(e,f)-ring)<48){harm(e,pow*.52);addStatus(e,'vulnerable',1.5,.18)}
+  }else if(f.kind==='fungus'){
+   newClassPulse(f,f.r,pow*.21,'burn');
+  }else if(f.kind==='sandstorm'){
+   f.angle+=.6;newClassPulse(f,f.r,pow*.22,'slow');
+  }else if(f.kind==='crescendo'){
+   const radius=f.r*(f.step%5+1)/5;
+   for(const e of enemies)if(!e.dead&&Math.abs(distance(e,f)-radius)<46){harm(e,pow*.48);addStatus(e,'vulnerable',1.2,.14)}
+  }else if(f.kind==='procession'){
+   f.x=p.x;f.y=p.y;
+   const near=enemies.filter(e=>!e.dead&&distance(e,f)<f.r);
+   for(const e of near.slice(0,4))harm(e,pow*.28);
+   p.hp=Math.min(p.maxhp,p.hp+2.2);
+  }else if(f.kind==='polarity'){
+   if(f.step<=3){for(const e of enemies)if(!e.dead&&distance(e,f)<f.r){
+    const a=Math.atan2(f.y-e.y,f.x-e.x);knockEnemy(e,a,75);harm(e,pow*.18)}
+   }else if(f.step===4){for(const e of enemies)if(!e.dead&&distance(e,f)<f.r){
+    const a=Math.atan2(e.y-f.y,e.x-f.x);knockEnemy(e,a,240);harm(e,pow*1.1)}
+   }
+  }else if(f.kind==='labyrinth'){
+   newClassPulse(f,f.r,pow*.19,'slow');
+   for(const e of enemies)if(!e.dead&&distance(e,f)<f.r)addStatus(e,'root',.22,.2);
+  }else if(f.kind==='meteors'){
+   const a=f.step*2.399,r=f.r*Math.sqrt((f.step%12+.5)/12);
+   const x=f.x+Math.cos(a)*r,y=f.y+Math.sin(a)*r;
+   newClassEffect('meteorFlash',x,y,.5,42,{});
+   for(const e of enemies)if(!e.dead&&Math.hypot(e.x-x,e.y-y)<60){harm(e,pow*.85);addStatus(e,'burn',2,pow*.12)}
+   particlesAt(x,y,'#ffba70',14);
+  }else if(f.kind==='transmute'){
+   const element=f.step%3;newClassPulse(f,f.r,pow*.3,element===0?'burn':element===1?'slow':'vulnerable');
+  }
+ }
+}
+const NEW_EFFECT_KINDS=new Set(['glyph','spore','string','sandBlade','note','firefly','butterfly','cathedral','maelstrom','marionette','palace','fungus','sandstorm','crescendo','procession','polarity','labyrinth','meteors','transmute','puppetWeb','glassPrism','prismBurst','paperStorm','magnetCrush','magnetBurst','acidFlask','acidSplash','acidPuddle','dreamPulse','meteorFlash','mycoSeed','soulLedger','magnetLink','dreamDecoy','mirrorAegis','tidalSurf','alchemyMix','cometImpact','tonicFlash','acidFlash','runeChain','runeSpark','puppetControl','glassTurret','glassFlash','sandDash','sandFlash','sonicBeam','dreamClone']);
+function extraTickEffects(dt){if(p.alchemyHaste>0){p.alchemyHaste=Math.max(0,p.alchemyHaste-dt);p.attackTimer=Math.min(p.attackTimer,p.rate*.7)}
  updateCombatStatuses(dt);
  const power=p.abilityPower;
  history.push({x:p.x,y:p.y,time:game.time});
@@ -1111,10 +1732,213 @@ function extraTickEffects(dt){
    if(f.life<=0){for(let e of enemies)if(!e.dead&&distance(e,f)<f.r){let a=Math.atan2(e.y-f.y,e.x-f.x);knockEnemy(e,a,215);e.kbGlow=.65;harm(e,p.damage*power)}particlesAt(f.x,f.y,'#bd8aff',40)}
   }
  }
+ tickNewClassEffects(dt);
+ for(const f of specialFx)if(f.life<=0&&(f.kind==='sandDash'||f.kind==='tidalSurf')&&f.source)f.source.skillSteering=false;
  specialFx=specialFx.filter(f=>f.life>0);
 }
+
+function drawNewClassEffect(f){
+ const id=p.id,base=extraClasses[id]?.color||'#a6eaff';
+ const t=f.age,life=Math.min(1,f.life*3),r=f.r||30;
+ g.save();g.globalAlpha=life;g.shadowColor=base;g.shadowBlur=20;
+ const ring=(rad,color=base,w=3,phase=0)=>{g.strokeStyle=color;g.lineWidth=w;g.beginPath();g.arc(0,0,rad,phase,phase+Math.PI*2);g.stroke()};
+ const point=(x,y,rad,col)=>{g.fillStyle=col;g.beginPath();g.arc(x,y,rad,0,Math.PI*2);g.fill()};
+ g.translate(f.x,f.y);
+ if((f.kind==='spore'||f.kind==='glyph')&&f.target&&!f.target.dead){f.x=f.target.x;f.y=f.target.y}
+ if(f.kind==='glyph'){
+  g.rotate(t*4+f.spin);ring(25,'#fff2bf',3);
+  for(let i=0;i<6;i++){const a=i*Math.PI/3;point(Math.cos(a)*25,Math.sin(a)*25,3,base)}
+  g.font='bold 28px serif';g.textAlign='center';g.fillStyle=base;g.fillText('✧',0,10);
+ }else if(f.kind==='string'){
+  const e=f.target,source=f.source;if(e&&source){
+   g.translate(-f.x,-f.y);g.strokeStyle=base;g.lineWidth=3;
+   g.setLineDash([8,5]);g.beginPath();g.moveTo(source.x,source.y);g.quadraticCurveTo((source.x+e.x)/2,(source.y+e.y)/2-50,e.x,e.y);g.stroke();g.setLineDash([]);
+  }
+ }else if(f.kind==='spore'){
+  for(let i=0;i<9;i++){let a=i*2.4+t*2;point(Math.cos(a)*r*.65,Math.sin(a)*r*.65,3+i%3,base)}
+  ring(r*(.35+t*.5),base,2);
+ }else if(f.kind==='sandBlade'){
+  g.rotate(Math.atan2(f.vy,f.vx)+t*7);g.strokeStyle='#ffe6ac';g.lineWidth=8;
+  g.beginPath();g.arc(0,0,19,-1.5,1.5);g.stroke();point(0,0,5,'#fff');
+ }else if(f.kind==='note'){
+  g.rotate(t*7);g.font='bold 31px serif';g.textAlign='center';g.fillStyle=base;g.fillText('♫',0,10);ring(15,'#fff9',2);
+ }else if(f.kind==='firefly'){
+  ring(12,'#fff4ad',3);point(0,0,7,'#fff6ae');
+  for(let i=0;i<4;i++){let a=i*Math.PI/2+t*9;point(Math.cos(a)*18,Math.sin(a)*18,3,base)}
+ }else if(f.kind==='butterfly'){
+  g.rotate(Math.sin(t*13)*.35);for(let side of [-1,1]){
+   g.fillStyle=base;g.beginPath();g.ellipse(side*9,0,9+Math.sin(t*23)*3,14,side*.4,0,Math.PI*2);g.fill()}
+  point(0,0,3,'#fff');
+
+
+
+
+ }else if(f.kind==='puppetWeb'){
+  const step=Math.PI*2/12;g.strokeStyle='#ffacd8';g.lineWidth=2.8;
+  for(let i=0;i<12;i++){let a=i*step;g.beginPath();g.moveTo(0,0);g.lineTo(Math.cos(a)*r,Math.sin(a)*r);g.stroke()}
+  for(let j=1;j<=5;j++){g.beginPath();for(let i=0;i<=12;i++){let a=i*step,rr=r*j/5;const x=Math.cos(a)*rr,y=Math.sin(a)*rr;i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke()}
+  for(const e of f.targets||[]){if(e.dead)continue;g.strokeStyle='#fff0fb';g.lineWidth=3;g.beginPath();g.moveTo(0,0);g.lineTo(e.x-f.x,e.y-f.y);g.stroke()}
+ }else if(f.kind==='glassPrism'){
+  const grow=Math.min(1,t/.55);g.scale(grow,grow);g.strokeStyle='#bdf8ff';g.lineWidth=4;g.fillStyle='#6fe1ff22';
+  g.beginPath();for(let i=0;i<6;i++){let a=i*Math.PI/3+t*.3;let x=Math.cos(a)*r,y=Math.sin(a)*r;i?g.lineTo(x,y):g.moveTo(x,y)}g.closePath();g.fill();g.stroke();
+  for(let i=0;i<6;i++){let a=i*Math.PI/3+t*.3;g.beginPath();g.moveTo(0,0);g.lineTo(Math.cos(a)*r,Math.sin(a)*r);g.stroke()}
+  g.font='bold 15px system-ui';g.textAlign='center';g.fillStyle='#e9ffff';g.fillText(Math.max(0,3-t).toFixed(1),0,5);
+  for(const e of f.targets||[]){if(e.dead)continue;g.save();g.translate(e.x-f.x,e.y-f.y);g.rotate(t);g.strokeStyle='#d9ffff';g.strokeRect(-e.r-7,-e.r-7,2*(e.r+7),2*(e.r+7));g.restore()}
+ }else if(f.kind==='prismBurst'||f.kind==='magnetBurst'){
+  ring(r*(.35+t*1.3),f.kind==='prismBurst'?'#a4f6ff':'#ff9ca7',9);ring(r*.6,'#ffffff',3);
+ }else if(f.kind==='paperStorm'){
+  for(let i=0;i<5;i++){const a=f.angle+(i-2)*.18;g.strokeStyle='rgba(255,243,182,.35)';g.lineWidth=1.5;g.beginPath();g.moveTo(0,0);g.lineTo(Math.cos(a)*r*1.8,Math.sin(a)*r*1.8);g.stroke()}point(0,0,8,'#fff3cb')
+ }else if(f.kind==='magnetCrush'){
+  ring(r*.88,'#ff8e9b',5);for(let i=0;i<4;i++){g.strokeStyle=i%2?'#a5e5ff':'#ffb6c1';g.lineWidth=3;g.beginPath();g.arc(0,0,r*(.25+i*.15),t*2+i,t*2+i+Math.PI*1.25);g.stroke()}
+  for(const e of f.targets||[]){if(e.dead)continue;g.strokeStyle='#ffd7dd';g.lineWidth=3;g.beginPath();g.moveTo(0,0);g.lineTo(e.x-f.x,e.y-f.y);g.stroke()}
+  for(let i=0;i<8;i++){let a=i*Math.PI/4+t*3;point(Math.cos(a)*r*.8,Math.sin(a)*r*.8,5,i%2?'#ff7e93':'#99d9ff')}
+ }else if(f.kind==='acidFlask'){
+  g.rotate(t*7);g.fillStyle='#b62b43';g.strokeStyle='#ff9baa';g.lineWidth=3;
+  g.beginPath();g.moveTo(-10,-16);g.lineTo(10,-16);g.lineTo(13,13);g.lineTo(-13,13);g.closePath();g.fill();g.stroke();
+  for(let i=0;i<5;i++)point(Math.sin(t*8+i)*8,Math.cos(t*5+i)*7,2,'#ff6378');
+ }else if(f.kind==='acidPuddle'){
+  g.shadowColor='#ff4058';g.shadowBlur=22;
+  g.fillStyle='rgba(160,19,47,.65)';g.strokeStyle='#ff6b79';g.lineWidth=4;
+  g.beginPath();
+  for(let i=0;i<=36;i++){const a=i*Math.PI/18,rr=r*(.86+.07*Math.sin(a*7+t*2)+.06*Math.cos(a*11-t*1.6));const x=Math.cos(a)*rr,y=Math.sin(a)*rr*.8;i?g.lineTo(x,y):g.moveTo(x,y)}
+  g.closePath();g.fill();g.stroke();
+  for(let i=0;i<14;i++){const a=i*2.399+t*.3,rr=r*Math.sqrt((i+.5)/15)*.76;point(Math.cos(a)*rr,Math.sin(a)*rr*.8,3+Math.sin(t*3+i)*1.5,i%2?'#ff9a9e':'#e34c64')}
+ }else if(f.kind==='acidSplash'){
+  for(let i=0;i<16;i++){const a=i*2.4;point(Math.cos(a)*r*(.25+t),Math.sin(a)*r*(.25+t),5,'#ef3e56')}
+ }else if(f.kind==='dreamPulse'){
+  ring(r*(.25+t*1.4),'#c7a3ff',6);ring(r*(.1+t),'#ffffff',2);
+ }else if(f.kind==='mycoSeed'){
+  const infected=[...(f.infected?.keys()||[])].filter(e=>!e.dead);
+  for(let i=0;i<infected.length;i++)for(let j=i+1;j<infected.length;j++){
+   const a=infected[i],b=infected[j];if(distance(a,b)>180)continue;
+   g.strokeStyle='#a8ff9a';g.lineWidth=2+Math.sin(t*5+i)*.8;
+   g.beginPath();g.moveTo(a.x-f.x,a.y-f.y);g.quadraticCurveTo((a.x+b.x)/2-f.x,(a.y+b.y)/2-f.y-18,b.x-f.x,b.y-f.y);g.stroke();
+  }
+
+  ring(17,'#9cff88',3);g.font='bold 22px serif';g.textAlign='center';g.fillStyle='#dcffab';g.fillText('✿',0,7);
+  if(f.infected)for(const [e] of f.infected){g.strokeStyle='#b9ff92';g.lineWidth=2;
+   g.beginPath();g.moveTo(0,0);g.lineTo(e.x-f.x,e.y-f.y);g.stroke();
+   point(e.x-f.x,e.y-f.y,7,'#d3ffa5');g.save();g.translate(e.x-f.x,e.y-f.y);g.fillStyle='#dbffc2';g.fillRect(-2,0,4,13);g.fillStyle='#a4d57b';g.beginPath();g.arc(0,-3,11,Math.PI,0);g.fill();for(let j=0;j<3;j++)point((j-1)*5,-5,2,'#fff9c7');g.restore()}
+ }else if(f.kind==='soulLedger'){
+  g.font='bold 36px serif';g.textAlign='center';g.fillStyle='#fff2a0';g.fillText('♧',0,12);
+  ring(25+t*2,'#ffe9a0',3);for(let i=0;i<5;i++){let a=i*1.256+t*1.6;point(Math.cos(a)*r*.85,Math.sin(a)*r*.85,5,'#fff4a8')}
+ }else if(f.kind==='magnetLink'){
+  const pair=f.targets.filter(e=>!e.dead);if(pair.length===2){
+   g.strokeStyle='#ff9eae';g.lineWidth=6;g.setLineDash([10,7]);
+   g.beginPath();g.moveTo(pair[0].x-f.x,pair[0].y-f.y);g.lineTo(pair[1].x-f.x,pair[1].y-f.y);g.stroke();g.setLineDash([]);
+   point(pair[0].x-f.x,pair[0].y-f.y,9,'#ff8c99');point(pair[1].x-f.x,pair[1].y-f.y,9,'#9bdcff')}
+ }else if(f.kind==='dreamDecoy'){
+  g.globalAlpha=.55+Math.sin(t*6)*.18;g.translate(Math.sin(t*3)*8,Math.cos(t*2.2)*6);ring(35,'#d9baff',4);
+  g.font='bold 48px serif';g.textAlign='center';g.fillStyle='#d2b8ff';g.fillText('☾',0,15);
+  for(let i=0;i<7;i++){let a=i*.897+t;point(Math.cos(a)*r*1.4,Math.sin(a)*r*1.4,3,'#e3cfff')}
+ }else if(f.kind==='mirrorAegis'){
+  for(let i=0;i<6;i++){const a=i*Math.PI/3+f.angle;
+   g.save();g.translate(Math.cos(a)*r*.85,Math.sin(a)*r*.85);g.rotate(a);
+   g.fillStyle='#94eaff';g.strokeStyle='#fff';g.lineWidth=2;
+   g.beginPath();g.moveTo(0,-17);g.lineTo(12,0);g.lineTo(0,17);g.lineTo(-12,0);g.closePath();g.fill();g.stroke();g.restore()}
+  ring(r*.82,'#aef4ff',4);ring(r*.5,'#ffffff',1);
+ }else if(f.kind==='tidalSurf'){
+  for(const w of f.wake||[]){g.globalAlpha=Math.max(0,1-w.age/.6)*.6;g.strokeStyle='#91f4ff';g.lineWidth=12*(1-w.age/.6);g.beginPath();g.arc(w.x-f.x,w.y-f.y,22+w.age*50,-1.3,1.3);g.stroke()}g.globalAlpha=life;g.rotate(f.angle);for(let i=0;i<4;i++){g.strokeStyle=i%2?'#dcffff':'#46c7ff';g.lineWidth=10-i*2;
+   g.beginPath();g.arc(-i*18,0,r*(.6+i*.11),-1.4,1.4);g.stroke()}
+  for(let i=0;i<8;i++)point(-r+Math.sin(t*9+i)*20,(i-4)*13,3,'#fff');
+ }else if(f.kind==='alchemyMix'||f.kind==='tonicFlash'||f.kind==='acidFlash'){
+  for(let i=0;i<7;i++){const a=i*Math.PI*2/7+t*3;
+   point(Math.cos(a)*r*.65,Math.sin(a)*r*.65,5,['#a6ffb6','#f5d57e','#ab8bff'][i%3])}
+  g.font='bold 30px serif';g.textAlign='center';g.fillStyle='#fff';g.fillText('⚗',0,10);
+ }else if(f.kind==='cometImpact'){
+  const progress=Math.min(1,t/(f.initialLife*.75));
+  ring(r,'#ffab61',3+progress*5);
+  for(let i=0;i<12;i++){const a=i*Math.PI/6+t*.8;
+   point(Math.cos(a)*r*(1-progress*.6),Math.sin(a)*r*(1-progress*.6),4,'#ffe0a5')}
+  const cometY=-230*(1-progress);g.strokeStyle='#ffad61';g.lineWidth=18;g.beginPath();g.moveTo(0,cometY-95);g.lineTo(0,cometY);g.stroke();point(0,cometY,17+progress*11,'#fff3ba');if(progress>.95){ring(r*.8,'#fff3bf',12);ring(r*.4,'#ff924a',10)}
+ }else if(f.kind==='runeChain'||f.kind==='runeSpark'){
+  if(f.previous&&f.linkAge>0){g.strokeStyle='rgba(255,235,148,'+(f.linkAge/.32)+')';g.lineWidth=5;g.beginPath();g.moveTo(f.previous.x-f.x,f.previous.y-f.y);g.lineTo(0,0);g.stroke()}g.rotate(t*5);for(let i=0;i<6;i++){const a=i*Math.PI/3;point(Math.cos(a)*r*.8,Math.sin(a)*r*.8,4,'#ffe9a1')}
+  ring(r*.9,'#ffdf80',3);g.font='bold 29px serif';g.textAlign='center';g.fillStyle='#fff';g.fillText('ᚱ',0,10);
+ }else if(f.kind==='puppetControl'){
+  ring(22,'#ff9bc7',3);g.fillStyle='#ffb4d6';g.font='bold 32px serif';g.textAlign='center';g.fillText('♟',0,11);
+  for(let i=0;i<5;i++){let a=i*Math.PI*2/5+t*2;point(Math.cos(a)*30,Math.sin(a)*30,3,'#fff')}
+ }else if(f.kind==='glassTurret'||f.kind==='glassFlash'){
+  g.rotate(t*2);g.fillStyle='#a9f5ff';g.strokeStyle='#fff';g.lineWidth=2;
+  g.beginPath();g.moveTo(0,-r);g.lineTo(r*.65,0);g.lineTo(0,r);g.lineTo(-r*.65,0);g.closePath();g.fill();g.stroke();
+  ring(r*.8,'#e4ffff',2);
+ }else if(f.kind==='sandDash'||f.kind==='sandFlash'){
+  for(const w of f.wake||[]){g.globalAlpha=Math.max(0,1-w.age/.5)*.6;point(w.x-f.x,w.y-f.y,12+w.age*15,'#f8d392')}g.globalAlpha=life;
+  for(let i=0;i<11;i++){let a=t*4+i*2.4;point(Math.cos(a)*r*(.2+i/13),Math.sin(a)*r*(.2+i/13),2+i%3,'#ffe2a0')}
+  g.strokeStyle='#fff2bb';g.lineWidth=6;g.beginPath();g.moveTo(-r*2,0);g.lineTo(r,0);g.stroke();
+ }else if(f.kind==='sonicBeam'){
+  g.rotate(f.angle);
+  const length=650*p.extraSize;
+  const shimmer=Math.sin(t*7)*2;
+  g.globalAlpha=life;
+  g.fillStyle='rgba(240,113,225,.14)';g.fillRect(0,-38,length,76);
+  for(const [w,c] of [[46,'rgba(236,89,211,.16)'],[28,'rgba(253,155,237,.30)'],[12,'rgba(255,214,252,.68)'],[4,'#ffffff']]){
+   g.strokeStyle=c;g.lineWidth=w;g.beginPath();g.moveTo(0,shimmer);g.lineTo(length,shimmer);g.stroke();
+  }
+  for(let i=0;i<14;i++){
+   const x=(i*55+t*105)%length;
+   const y=Math.sin(i*1.8+t*4)*22;
+   point(x,y,2.5,'#ffeaff');
+  }
+ }else if(f.kind==='dreamClone'){
+  g.globalAlpha=.45+Math.sin(t*5)*.2;ring(22,'#d7baff',3);
+  g.fillStyle='#d7baff';g.beginPath();g.arc(0,-8,13,0,Math.PI*2);g.fill();
+  g.fillRect(-13,6,26,20);g.font='20px serif';g.fillText('☾',-8,-24);
+ }else if(f.kind==='meteorFlash'){
+  ring(r*(1-f.life/.5), '#ffe7a2',8);
+  for(let i=0;i<10;i++){let a=i*Math.PI/5;point(Math.cos(a)*r*.7,Math.sin(a)*r*.7,3,'#fff3c2')}
+ }else{
+  g.globalAlpha=life*.9;
+  ring(r,base,2.5,t*.35);
+  ring(r*.65,base,1.5,-t*.7);
+  if(f.kind==='cathedral'){
+   for(let i=0;i<8;i++){let a=i*Math.PI/4;g.save();g.translate(Math.cos(a)*r*.8,Math.sin(a)*r*.8);g.rotate(a+t);g.strokeStyle='#ffe4a1';g.lineWidth=3;g.strokeRect(-12,-12,24,24);g.restore()}
+   g.font='bold 58px serif';g.textAlign='center';g.fillStyle='#fff1bd';g.fillText('✧',0,20);
+  }else if(f.kind==='maelstrom'){
+   for(let i=0;i<4;i++){g.strokeStyle=i%2?'#b9ffff':'#38b5eb';g.lineWidth=7-i;
+    g.beginPath();g.arc(0,0,r*(.25+i*.17),t*(1+i*.3),t*(1+i*.3)+Math.PI*1.55);g.stroke()}
+  }else if(f.kind==='marionette'){
+   for(let i=0;i<9;i++){let a=i*Math.PI*2/9+t;g.strokeStyle='#ffc5e2';g.lineWidth=2;
+    g.beginPath();g.moveTo(0,-r*.45);g.lineTo(Math.cos(a)*r*.8,Math.sin(a)*r*.8);g.stroke();point(Math.cos(a)*r*.8,Math.sin(a)*r*.8,5,base)}
+  }else if(f.kind==='palace'){
+   for(let i=0;i<14;i++){let a=i*Math.PI*2/14,rad=r*(.35+(i%3)*.18);
+    g.save();g.translate(Math.cos(a)*rad,Math.sin(a)*rad);g.rotate(a+t*.3);
+    g.fillStyle=i%2?'#8eeaff':'#d4ffff';g.beginPath();g.moveTo(0,-25);g.lineTo(10,0);g.lineTo(0,25);g.lineTo(-10,0);g.closePath();g.fill();g.restore()}
+  }else if(f.kind==='fungus'){
+   for(let i=0;i<16;i++){let a=i*2.4+t*.4,rad=r*Math.sqrt((i+.5)/16);
+    point(Math.cos(a)*rad,Math.sin(a)*rad,8+Math.sin(t*3+i)*3,i%3?'#b0eb85':'#f0ffa5')}
+  }else if(f.kind==='sandstorm'){
+   for(let i=0;i<5;i++){g.strokeStyle=i%2?'#ffdf9c':'#c98b55';g.lineWidth=9-i;
+    g.beginPath();g.arc(0,0,r*(.25+i*.14),t*3+i,t*3+i+Math.PI*1.4);g.stroke()}
+   for(let i=0;i<20;i++){let a=i*2.4+t*4;point(Math.cos(a)*r*.75,Math.sin(a)*r*.75,2+i%3,'#ffe9bc')}
+  }else if(f.kind==='crescendo'){
+   for(let i=0;i<5;i++)ring(r*(.15+i*.2)*(1+.06*Math.sin(t*8)),i%2?'#ffb3ec':'#fff',5-i*.6);
+   g.font='bold 56px serif';g.textAlign='center';g.fillStyle='#fff';g.fillText('♪',0,20);
+  }else if(f.kind==='procession'){
+   const source=f.source||p;g.translate(source.x-f.x,source.y-f.y);
+   for(let i=0;i<7;i++){let a=i*Math.PI*2/7+t*2.5;point(Math.cos(a)*r*.8,Math.sin(a)*r*.8,12,i%2?'#ffe49a':'#fff7ce')}
+  }else if(f.kind==='polarity'){
+   for(let i=0;i<2;i++){let a=t*3+i*Math.PI;g.strokeStyle=i?'#ffb5bb':'#a4dfff';g.lineWidth=10;
+    g.beginPath();g.arc(0,0,r*.75,a,a+Math.PI*.85);g.stroke()}
+   g.font='bold 46px system-ui';g.textAlign='center';g.fillStyle='#fff';g.fillText('↔',0,15);
+  }else if(f.kind==='labyrinth'){
+   g.rotate(t*.3);for(let i=0;i<5;i++){g.strokeStyle=i%2?'#a9a2ff':'#e1d3ff';g.lineWidth=3;
+    g.strokeRect(-r*(.2+i*.14),-r*(.2+i*.14),r*(.4+i*.28),r*(.4+i*.28))}
+   for(let i=0;i<8;i++){let a=i*Math.PI/4+t;point(Math.cos(a)*r*.8,Math.sin(a)*r*.8,5,'#d5baff')}
+  }else if(f.kind==='meteors'){
+   for(let i=0;i<12;i++){let a=i*2.4+t*.3,rad=r*Math.sqrt((i+.5)/12);
+    ringAtMeteor(Math.cos(a)*rad,Math.sin(a)*rad,9+i%4,'#ffb45e')}
+  }else if(f.kind==='transmute'){
+   for(let i=0;i<6;i++){let a=i*Math.PI/3+t*1.4,x=Math.cos(a)*r*.72,y=Math.sin(a)*r*.72;
+    g.save();g.translate(x,y);g.rotate(t*3+i);g.fillStyle=['#ff9b78','#85d7ff','#9fffa2'][i%3];
+    g.beginPath();g.moveTo(-9,-14);g.lineTo(9,-14);g.lineTo(16,8);g.lineTo(-16,8);g.closePath();g.fill();g.restore()}
+   ring(r*.35,'#fff',4);
+  }
+ }
+ g.restore();
+ function ringAtMeteor(x,y,r,c){g.strokeStyle=c;g.lineWidth=3;g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.stroke()}
+}
 function extraDrawEffects(){
- for(const f of specialFx){g.save();let col=extraClasses[p.id]?.color||'#fff';g.shadowBlur=18;g.shadowColor=col;
+ for(const f of specialFx){if(NEW_EFFECT_KINDS.has(f.kind)){drawNewClassEffect(f);continue}g.save();let col=extraClasses[p.id]?.color||'#fff';g.shadowBlur=18;g.shadowColor=col;
  if(f.kind==='prismNova'){
  let t=f.age/.95,rad=f.r*(.15+t*.95);g.globalAlpha=Math.max(0,1-t);
  g.translate(f.x,f.y);g.rotate(t*2);
@@ -1185,13 +2009,44 @@ function upgradePoolFor(id){
  return [...universal.map(u=>[...u,'UNIVERSAL']),...classPool.map(u=>[...u,'CLASS EXCLUSIVE'])];
 }
 
+// All upgrades can be selected again at later levels. No one-time removal.
+const upgradeStackCounts=new WeakMap();
+function stackCountFor(actor,name){return upgradeStackCounts.get(actor)?.get(name)||0}
+function recordUpgradeStack(actor,name){
+ let counts=upgradeStackCounts.get(actor);
+ if(!counts){counts=new Map();upgradeStackCounts.set(actor,counts)}
+ counts.set(name,(counts.get(name)||0)+1);
+}
+function weightedUpgradePick(items){
+ let total=0;
+ const weights=items.map(u=>{
+  const name=u[1].toLowerCase(),desc=u[2].toLowerCase();
+  const directDamage=/damage|power training|overcharge|heavy projectiles|spell mastery|arcane focus/.test(name+' '+desc);
+  const attackSpeed=/attack speed|attack .*faster|quick hands|rapid volley|overclock|spell accelerator|frenzy/.test(name+' '+desc);
+  const w=directDamage?4.0:attackSpeed?4.8:1;
+  total+=w;return w;
+ });
+ let roll=Math.random()*total;
+ for(let i=0;i<items.length;i++){roll-=weights[i];if(roll<=0)return items.splice(i,1)[0]}
+ return items.pop();
+}
 function chooseUpgradeOptions(id,count=3){
  const pool=upgradePoolFor(id),exclusive=pool.filter(u=>u[4]==='CLASS EXCLUSIVE');
  const common=pool.filter(u=>u[4]==='UNIVERSAL'),options=[];
- const take=arr=>{if(arr.length){const n=Math.floor(Math.random()*arr.length);options.push(arr.splice(n,1)[0])}};
+ const take=arr=>{if(arr.length)options.push(weightedUpgradePick(arr))};
  // Class upgrades are more common; boss reward screens always contain several.
  const classCount=count===9?Math.min(4,exclusive.length):Math.random()<.65?1:0;
  for(let i=0;i<classCount;i++)take(exclusive);
+ // At least one damage/attack-speed upgrade in normal level-up offers.
+ if(count===3){
+  const offense=common.filter(u=>/damage|attack speed|attack .*faster|quick hands|overclock|rapid volley|power training|overcharge/i.test(u[1]+' '+u[2]));
+  if(offense.length){
+   const chosen=weightedUpgradePick(offense);
+   const idx=common.findIndex(u=>u[1]===chosen[1]);
+   if(idx>=0)common.splice(idx,1);
+   options.push(chosen);
+  }
+ }
  while(options.length<count&&(common.length||exclusive.length)){
   take(common.length?common:exclusive);
  }
@@ -1201,7 +2056,7 @@ function chooseUpgradeOptions(id,count=3){
 function botUpgradeScore(bot,u){
  const name=u[1].toLowerCase(),desc=u[2].toLowerCase(),both=name+' '+desc;
  let n=Math.random()*1.2+(u[4]==='CLASS EXCLUSIVE'?4:0);
- if(/damage|attack|cooldown|projectile|critical|power|speed|pierce|chain|explosion/.test(both))n+=2.8;
+ if(/damage|attack|cooldown|projectile|critical|power|speed|pierce|chain|explosion/.test(both))n+=4.0;
  if(/health|hp|armor|regenerat|heal|vitality|fortitude|shield|dash/.test(both))
   n+=bot.hp<bot.maxhp*.65?9:3;
  if(/cooldown|ability/.test(both)&&bot.abilityCd>8)n+=2;
@@ -1212,13 +2067,13 @@ function botChooseUpgrade(bot,options=null){
  const choices=options||chooseUpgradeOptions(bot.id);
  if(!choices.length)return null;
  const chosen=choices.map(u=>({u,score:botUpgradeScore(bot,u)})).sort((a,b)=>b.score-a.score)[0].u;
- withBotActor(bot,()=>chosen[3]());
+ withBotActor(bot,()=>chosen[3]());recordUpgradeStack(bot,chosen[1]);
  bot.level=(bot.level||1)+1;
  return chosen;
 }
 function upgradeCard(u,i,selected=false){
  return '<button class="choice" data-i="'+i+'" style="'+(selected?'border:2px solid #a8f8b6;box-shadow:0 0 16px #5cf5aa55;':'')+'">'+
- '<div class="emoji">'+u[0]+'</div><div class="tag">'+u[4]+'</div><strong>'+u[1]+'</strong><span>'+u[2]+'</span></button>';
+ '<div class="emoji">'+u[0]+'</div><div class="tag">'+u[4]+' · STACKABLE'+(stackCountFor(p,u[1])?' · OWNED ×'+stackCountFor(p,u[1]):'')+'</div><strong>'+u[1]+'</strong><span>'+u[2]+'</span></button>';
 }
 function upgradeResults(yours,botResults,isBoss=false){
  game.state='upgrade';
@@ -1231,6 +2086,52 @@ function upgradeResults(yours,botResults,isBoss=false){
  botHtml+'<button id="nextLevel">'+(game.pending>0?'NEXT LEVEL UP':'CONTINUE FIGHTING')+'</button></div>';
  $('nextLevel').onclick=()=>{if(game.pending>0){if(coopMode&&(p.hp<=0||game.spectating))autoSpectatorUpgrades();else levelUp()}else{game.state='play';$('overlay').style.display='none'}updateHud()};
 }
+const UNIQUE_CLASS_FACES={"cloud": ["#9de9ff", "cloud", 0], "romance": ["#ff9ecf", "heart", 1], "lily": ["#d45492", "petal", 2], "wind": ["#a9ed78", "leaf", 3], "star": ["#b4a0ff", "star", 4], "electro": ["#66e6f4", "bolt", 5], "frost": ["#8dc6ff", "hex", 6], "ember": ["#ffac66", "flame", 7], "thorn": ["#78d39a", "thorn", 8], "chrono": ["#b3a1ee", "clock", 9], "prism": ["#f8c8ff", "diamond", 10], "gravity": ["#a6a4c9", "orb", 11], "rune": ["#f5d87a", "scroll", 12], "tide": ["#55c6ed", "wave", 13], "puppet": ["#e6a6d7", "mask", 14], "glass": ["#7ae8d8", "prism", 15], "myco": ["#b5dc7b", "mushroom", 16], "sand": ["#edc789", "dune", 17], "sonic": ["#ff85d4", "speaker", 18], "lantern": ["#ffdf9c", "lantern", 19], "magnet": ["#ef858d", "magnet", 20], "dream": ["#c3a3fc", "moon", 21], "comet": ["#ffad7e", "comet", 22], "alchem": ["#c46a83", "flask", 23]};
+function drawUniqueClassFace(id,x,y,r,angle=0){
+ const spec=UNIQUE_CLASS_FACES[id]||UNIQUE_CLASS_FACES.cloud;
+ const [color,shape,index]=spec;
+ g.save();g.translate(x,y);g.rotate(angle*.12);
+ g.shadowColor=color;g.shadowBlur=13;
+ const points=(n,inner=1,rot=-Math.PI/2)=>{g.beginPath();for(let j=0;j<n;j++){let a=rot+j*2*Math.PI/n,rr=r*(j%2?inner:1);j?g.lineTo(Math.cos(a)*rr,Math.sin(a)*rr):g.moveTo(Math.cos(a)*rr,Math.sin(a)*rr)}g.closePath()};
+ g.fillStyle=color;g.strokeStyle='#ffffffbb';g.lineWidth=1.5;
+ if(shape==='cloud'){for(const [x,y,rr] of [[-7,1,.58],[5,1,.64],[0,-5,.68]])circle(x,y,r*rr,color)}
+ else if(shape==='heart'){g.beginPath();g.moveTo(0,r*.85);g.bezierCurveTo(-r*1.3,0,-r*.8,-r*.9,0,-r*.35);g.bezierCurveTo(r*.8,-r*.9,r*1.3,0,0,r*.85);g.fill();g.stroke()}
+ else if(shape==='petal'){for(let j=0;j<5;j++){g.save();g.rotate(j*2*Math.PI/5);g.beginPath();g.ellipse(0,-r*.47,r*.35,r*.65,0,0,Math.PI*2);g.fill();g.stroke();g.restore()}}
+ else if(shape==='leaf'){g.beginPath();g.moveTo(0,r);g.quadraticCurveTo(-r*1.25,-r*.35,0,-r);g.quadraticCurveTo(r*1.25,-r*.35,0,r);g.fill();g.stroke();g.beginPath();g.moveTo(0,r*.8);g.lineTo(0,-r*.8);g.stroke()}
+ else if(shape==='star'){points(10,.48);g.fill();g.stroke()}
+ else if(shape==='bolt'){points(8,.75);g.fill();g.stroke();g.fillStyle='#fff';g.beginPath();g.moveTo(3,-r);g.lineTo(-5,1);g.lineTo(2,1);g.lineTo(-2,r);g.lineTo(9,-3);g.lineTo(2,-3);g.closePath();g.fill()}
+ else if(shape==='hex'){points(6);g.fill();g.stroke()}
+ else if(shape==='flame'){g.beginPath();g.moveTo(0,-r);g.bezierCurveTo(r*.9,-r*.1,r, r*.8,0,r);g.bezierCurveTo(-r,r*.65,-r*.75,0,0,-r);g.fill();g.stroke()}
+ else if(shape==='thorn'){points(12,.62);g.fill();g.stroke()}
+ else if(shape==='clock'){circle(0,0,r,color);g.strokeStyle='#4a377c';g.lineWidth=2;g.beginPath();g.moveTo(0,-r*.7);g.lineTo(0,0);g.lineTo(r*.55,r*.25);g.stroke()}
+ else if(shape==='prism'){points(3,1,Math.PI/6);g.fill();g.stroke();g.beginPath();g.moveTo(0,-r*.8);g.lineTo(0,r*.8);g.stroke()}
+ else if(shape==='diamond'){points(4,1,-Math.PI/2);g.fill();g.stroke()}
+ else if(shape==='orb'){circle(0,0,r,color);g.strokeStyle='#ffffff99';g.beginPath();g.ellipse(0,0,r*.95,r*.35,Math.PI/4,0,Math.PI*2);g.stroke()}
+ else if(shape==='scroll'){g.fillRect(-r*.8,-r*.8,r*1.6,r*1.6);circle(-r*.8,0,r*.25,'#f4b65d');circle(r*.8,0,r*.25,'#f4b65d')}
+ else if(shape==='wave'){g.beginPath();g.moveTo(-r,-r*.2);g.quadraticCurveTo(-r*.25,-r*1.2,r*.2,-r*.2);g.quadraticCurveTo(r*.75,r*.4,r,r*.3);g.quadraticCurveTo(0,r*1.2,-r,r*.45);g.closePath();g.fill();g.stroke()}
+ else if(shape==='mask'){points(6,.86);g.fill();g.stroke();g.fillStyle='#fff';circle(-r*.4,-r*.2,3,'#fff');circle(r*.4,-r*.2,3,'#fff')}
+ else if(shape==='mushroom'){g.fillRect(-r*.28,0,r*.56,r*.85);g.beginPath();g.arc(0,0,r,Math.PI,0);g.fill();g.stroke();circle(-r*.4,-r*.25,2,'#fff');circle(r*.3,-r*.5,3,'#fff')}
+ else if(shape==='dune'){points(5,.75);g.fill();g.stroke();g.beginPath();g.arc(0,r*.35,r*.8,Math.PI,0);g.stroke()}
+ else if(shape==='speaker'){points(8,.85);g.fill();g.stroke();g.strokeStyle='#6b295c';for(let j=0;j<2;j++){g.beginPath();g.arc(0,0,r*(.35+j*.3),-.7,.7);g.stroke()}}
+ else if(shape==='lantern'){g.beginPath();g.roundRect(-r*.65,-r*.7,r*1.3,r*1.5,4);g.fill();g.stroke();g.fillStyle='#fff7ce';g.fillRect(-r*.25,-r*.35,r*.5,r*.8)}
+ else if(shape==='magnet'){g.beginPath();g.arc(0,0,r,-Math.PI,0);g.lineTo(r*.5,0);g.arc(0,0,r*.5,0,-Math.PI,true);g.lineTo(-r,0);g.closePath();g.fill();g.stroke()}
+ else if(shape==='moon'){circle(0,0,r,color);circle(r*.45,-r*.35,r*.85,'#17213c')}
+ else if(shape==='comet'){points(8,.76);g.fill();g.stroke();g.beginPath();g.moveTo(-r*.6,r*.5);g.lineTo(-r*1.3,r*1.1);g.stroke()}
+ else if(shape==='flask'){g.beginPath();g.moveTo(-r*.3,-r);g.lineTo(r*.3,-r);g.lineTo(r*.3,-r*.25);g.lineTo(r*.85,r*.65);g.quadraticCurveTo(r*.9,r,-r*.85,r*.65);g.lineTo(-r*.3,-r*.25);g.closePath();g.fill();g.stroke()}
+ g.shadowBlur=0;
+ // Each class has its own expression, eye geometry and decorative facial details.
+ const faceColor=index%4===0?'#25415d':index%4===1?'#66304f':index%4===2?'#314b4c':'#453354';
+ const eyeOffset=4.3+(index%3)*.7;
+ if(index%6===0){circle(-eyeOffset,-1,2.2,faceColor);circle(eyeOffset,-1,2.2,faceColor)}
+ else if(index%6===1){g.fillStyle=faceColor;g.fillRect(-eyeOffset-2,-3,4,2);g.fillRect(eyeOffset-2,-3,4,2)}
+ else if(index%6===2){g.strokeStyle=faceColor;g.lineWidth=2;for(const side of [-1,1]){g.beginPath();g.arc(side*eyeOffset,-1,2.7,Math.PI,0);g.stroke()}}
+ else if(index%6===3){circle(-eyeOffset,-1,2.8,faceColor);circle(eyeOffset,-1,2.8,faceColor);circle(-eyeOffset-1,-2,1,'#fff');circle(eyeOffset-1,-2,1,'#fff')}
+ else if(index%6===4){g.strokeStyle=faceColor;g.lineWidth=2.3;for(const side of [-1,1]){g.beginPath();g.moveTo(side*eyeOffset-2,-3);g.lineTo(side*eyeOffset+2,0);g.stroke()}}
+ else{g.fillStyle=faceColor;g.beginPath();g.ellipse(-eyeOffset,-1,2,3,0,0,Math.PI*2);g.ellipse(eyeOffset,-1,2,3,0,0,Math.PI*2);g.fill()}
+ g.strokeStyle=faceColor;g.lineWidth=1.7;g.beginPath();if(index%3===0)g.arc(0,4,3,0,Math.PI);else if(index%3===1){g.moveTo(-3,5);g.lineTo(3,5)}else g.arc(0,5,2.3,Math.PI,2*Math.PI);g.stroke();
+ g.restore();
+}
+
 function chooseBossRewards(){
  if(game.state==='dead')return;
  const livingPlayer=p.hp>0&&!game.spectating;
@@ -1247,6 +2148,8 @@ function chooseBossRewards(){
  game.state='upgrade';
  const choices=chooseUpgradeOptions(playerClassId,9),picked=[];
  const className=extraClasses[playerClassId]?.name||playerClassId.toUpperCase();
+
+
  function render(){
   $('overlay').style.display='flex';
   $('overlay').innerHTML='<div class="modal" style="max-width:1050px;width:min(95vw,1050px);max-height:90vh;overflow-y:auto">'+
@@ -1258,7 +2161,7 @@ function chooseBossRewards(){
   $('overlay').querySelectorAll('.choice').forEach(btn=>btn.onclick=()=>{
    const i=+btn.dataset.i;
    if(picked.includes(i)||picked.length>=3)return;
-   picked.push(i);choices[i][3]();game.upgrades++;
+   picked.push(i);choices[i][3]();recordUpgradeStack(p,choices[i][1]);game.upgrades++;
    if(picked.length===3){
     const botResults=[];
     if(coopMode)for(const bot of coopBots)if(bot.alive){
@@ -1294,7 +2197,7 @@ function levelUp(){
  '<h1>Choose Your Upgrade</h1><p>Class-exclusive upgrades now appear more often.</p>'+
  '<div class="choices">'+options.map((u,i)=>upgradeCard(u,i)).join('')+'</div></div>';
  $('overlay').querySelectorAll('.choice').forEach(btn=>btn.onclick=()=>{
-  const chosen=options[+btn.dataset.i];chosen[3]();game.upgrades++;
+  const chosen=options[+btn.dataset.i];chosen[3]();recordUpgradeStack(p,chosen[1]);game.upgrades++;
   const botResults=[];
   if(coopMode)for(const bot of coopBots)if(bot.alive){
    const upgrade=botChooseUpgrade(bot);
@@ -1324,7 +2227,7 @@ function tick(dt){if(game.state!=='play'||bossCinema)return;selected=playerClass
  // A dedicated boss wave: clear old enemies and hostile projectiles.
  enemies=[];enemyBolts=[];effects=effects.filter(e=>e.kind!=='void');
  spawn(true);game.bossSpawned=true;
-}if(game.wave%5!==0&&game.spawn<=0&&enemies.length<(coopMode?340:170)){let waves=coopMode?2:1;for(let i=0;i<waves;i++){if(enemies.length>=(coopMode?340:170))break;spawn();if(game.wave>=3&&Math.random()<.25&&enemies.length<(coopMode?340:170))spawn()}game.spawn=Math.max(.17,1.08-game.wave*.048)}let mx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+joy.x,my=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0)+joy.y,mag=Math.hypot(mx,my);if(mag&&p.hp>0){p.faceX=mx/mag;p.faceY=my/mag;p.x+=mx/mag*p.speed*(p.webSlow>0?.6:1)*dt;p.y+=my/mag*p.speed*(p.webSlow>0?.6:1)*dt}p.x=clamp(p.x,p.r,world.w-p.r);p.y=clamp(p.y,p.r,world.h-p.r);p.inv=Math.max(0,p.inv-dt);p.webSlow=Math.max(0,(p.webSlow||0)-dt);if(p.hp>0)p.hp=Math.min(p.maxhp,p.hp+p.regen*dt);p.attackTimer-=dt;for(let i=pendingStars.length-1;i>=0;i--){
+}if(game.wave%5!==0&&game.spawn<=0&&enemies.length<(coopMode?340:170)){let waves=coopMode?2:1;for(let i=0;i<waves;i++){if(enemies.length>=(coopMode?340:170))break;spawn();if(game.wave>=3&&Math.random()<.25&&enemies.length<(coopMode?340:170))spawn()}game.spawn=Math.max(.17,1.08-game.wave*.048)}let mx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+joy.x,my=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0)+joy.y,mag=Math.hypot(mx,my);if(mag&&p.hp>0){p.faceX=mx/mag;p.faceY=my/mag;if(!p.skillSteering){p.x+=mx/mag*p.speed*(p.webSlow>0?.6:1)*dt;p.y+=my/mag*p.speed*(p.webSlow>0?.6:1)*dt}}p.x=clamp(p.x,p.r,world.w-p.r);p.y=clamp(p.y,p.r,world.h-p.r);p.inv=Math.max(0,p.inv-dt);p.webSlow=Math.max(0,(p.webSlow||0)-dt);if(p.hp>0)p.hp=Math.min(p.maxhp,p.hp+p.regen*dt);p.attackTimer-=dt;for(let i=pendingStars.length-1;i>=0;i--){
  const q=pendingStars[i];q.delay-=dt;
  if(q.delay>0)continue;
  const shooter=q.owner;
@@ -1364,7 +2267,10 @@ if(e.kind==='invoker'&&e.skillTimer<=0){e.skillTimer=5.5;for(let j=0;j<2;j++)spa
 if(e.kind==='void'&&e.skillTimer<=0){e.skillTimer=4.5;effects.push({owner:p,kind:'void',x:p.x,y:p.y,r:88,life:2.3,tick:.7})}
 if(e.kind==='berserker'&&e.hp<e.maxhp*.5)e.speed=Math.max(e.speed,115*(1+game.wave*.013));
 if(e.kind==='leech'&&distance(e,p)<e.r+p.r+2&&p.inv<=0)e.hp=Math.min(e.maxhp,e.hp+e.dmg*.7);
-if(e.stun<=0&&e.kind==='bomber'&&distance(e,nearestLivingAlly(e))<e.r+nearestLivingAlly(e).r+35){e.dead=true;particlesAt(e.x,e.y,'#ffad54',34);let victim=nearestLivingAlly(e);if(victim!==p)damageBot(victim,e.dmg*1.6);else if(p.hp>0&&p.inv<=0){p.hp-=e.dmg*1.6*(1-p.armor);p.inv=.65;if(p.hp<=0){p.hp=0;playerDefeated();}}continue}if(e.stun>0){e.hit=Math.max(0,e.hit-dt);continue}let target=nearestLivingAlly(e);if(e.charm>0){let others=enemies.filter(z=>z!==e&&!z.dead&&z.charm<=0);if(others.length)target=others.reduce((a,b)=>distance(e,a)<distance(e,b)?a:b)}let dx=target.x-e.x,dy=target.y-e.y,d=Math.hypot(dx,dy)||1;let separationX=0,separationY=0;for(let z of enemies){if(z===e||z.dead)continue;let dd=distance(z,e);if(dd<e.r+z.r+5&&dd>0){separationX+=(e.x-z.x)/dd*30;separationY+=(e.y-z.y)/dd*30}}let steering=Math.hypot(e.kbVX||0,e.kbVY||0)>45?.2:1;e.x+=((e.kind==='archer'&&d<235?-dx/d:dx/d)*e.speed*(e.slow>0?.6:1)+separationX)*dt*steering;e.y+=(dy/d*e.speed*(e.slow>0?.6:1)+separationY)*dt*steering;if(e.charm>0&&target!==p&&d<e.r+target.r+4&&e.hit<=0){harm(target,e.dmg*.7);e.hit=.8}e.hit=Math.max(0,e.hit-dt);if(coopMode&&e.charm<=0)for(let b of coopBots)if(b.alive&&distance(e,b)<e.r+b.r+2)damageBot(b,e.dmg);if(p.hp>0&&distance(e,p)<e.r+p.r+2&&p.inv<=0&&e.charm<=0){p.hp-=e.dmg*(1-p.armor);p.inv=.65;particlesAt(p.x,p.y,'#ff7297',12);if(p.hp<=0){p.hp=0;playerDefeated();}}}for(let bolt of enemyBolts){bolt.x+=bolt.vx*dt;bolt.y+=bolt.vy*dt;bolt.life-=dt;if(coopMode)for(let b of coopBots)if(b.alive&&bolt.life>0&&distance(bolt,b)<bolt.r+b.r){damageBot(b,bolt.dmg,bolt.type==='web'||bolt.type==='frost');bolt.life=0;}if(p.hp>0&&distance(bolt,p)<bolt.r+p.r&&p.inv<=0){p.hp-=bolt.dmg*(1-p.armor);p.inv=.65;bolt.life=0;particlesAt(p.x,p.y,'#bca2ff',9);if(bolt.type==='web'||bolt.type==='frost')p.webSlow=2;if(p.hp<=0){p.hp=0;playerDefeated();}}}enemyBolts=enemyBolts.filter(b=>b.life>0);for(let b of shots){currentDamageOwner=b.owner||p;const oldShotX=b.x,oldShotY=b.y;if(b.kind==='wind'&&b.target&&!b.target.dead){
+if(e.stun<=0&&e.kind==='bomber'&&distance(e,nearestLivingAlly(e))<e.r+nearestLivingAlly(e).r+35){e.dead=true;particlesAt(e.x,e.y,'#ffad54',34);let victim=nearestLivingAlly(e);if(victim!==p)damageBot(victim,e.dmg*1.6);else if(p.hp>0&&p.inv<=0){p.hp-=e.dmg*1.6*(1-p.armor);p.inv=.65;if(p.hp<=0){p.hp=0;playerDefeated();}}continue}if(e.stun>0){e.hit=Math.max(0,e.hit-dt);continue}let target=nearestLivingAlly(e);
+ const decoys=[...specialFx,...coopBots.flatMap(b=>b.ownFx||[])].filter(f=>f.kind==='dreamDecoy'&&f.life>0&&distance(f,e)<410);
+ if(decoys.length&&e.charm<=0)target=decoys.sort((a,b)=>distance(a,e)-distance(b,e))[0];
+ if(e.charm>0){let others=enemies.filter(z=>z!==e&&!z.dead&&z.charm<=0);if(others.length)target=others.reduce((a,b)=>distance(e,a)<distance(e,b)?a:b)}let dx=target.x-e.x,dy=target.y-e.y,d=Math.hypot(dx,dy)||1;let separationX=0,separationY=0;for(let z of enemies){if(z===e||z.dead)continue;let dd=distance(z,e);if(dd<e.r+z.r+5&&dd>0){separationX+=(e.x-z.x)/dd*30;separationY+=(e.y-z.y)/dd*30}}let steering=Math.hypot(e.kbVX||0,e.kbVY||0)>45?.2:1;e.x+=((e.kind==='archer'&&d<235?-dx/d:dx/d)*e.speed*(e.slow>0?.6:1)+separationX)*dt*steering;e.y+=(dy/d*e.speed*(e.slow>0?.6:1)+separationY)*dt*steering;if(e.charm>0&&target!==p&&d<e.r+target.r+4&&e.hit<=0){harm(target,e.dmg*.7);e.hit=.8}e.hit=Math.max(0,e.hit-dt);if(coopMode&&e.charm<=0)for(let b of coopBots)if(b.alive&&distance(e,b)<e.r+b.r+2)damageBot(b,e.dmg);if(p.hp>0&&distance(e,p)<e.r+p.r+2&&p.inv<=0&&e.charm<=0){p.hp-=e.dmg*(1-p.armor);p.inv=.65;particlesAt(p.x,p.y,'#ff7297',12);if(p.hp<=0){p.hp=0;playerDefeated();}}}for(let bolt of enemyBolts){bolt.x+=bolt.vx*dt;bolt.y+=bolt.vy*dt;bolt.life-=dt;if(coopMode)for(let b of coopBots)if(b.alive&&bolt.life>0&&distance(bolt,b)<bolt.r+b.r){damageBot(b,bolt.dmg,bolt.type==='web'||bolt.type==='frost');bolt.life=0;}if(p.hp>0&&distance(bolt,p)<bolt.r+p.r&&p.inv<=0){p.hp-=bolt.dmg*(1-p.armor);p.inv=.65;bolt.life=0;particlesAt(p.x,p.y,'#bca2ff',9);if(bolt.type==='web'||bolt.type==='frost')p.webSlow=2;if(p.hp<=0){p.hp=0;playerDefeated();}}}enemyBolts=enemyBolts.filter(b=>b.life>0);for(let b of shots){currentDamageOwner=b.owner||p;if(b.kind==='paperShuriken'){b.trail??=[];b.trail.push({x:b.x,y:b.y,life:.28});for(const tr of b.trail)tr.life-=dt;b.trail=b.trail.filter(tr=>tr.life>0)}const oldShotX=b.x,oldShotY=b.y;if(b.kind==='wind'&&b.target&&!b.target.dead){
 // Follow a curved, target-anchored path. The endpoint moves with the enemy.
 // Both blades first diverge and then converge on their assigned target.
 b.curveAge+=dt;
@@ -1399,7 +2305,7 @@ b.life-=dt;if(b.kind==='wind'&&b.target&&!b.target.dead&&b.curveAge>=b.curveDura
   const tc=((c.x-oldShotX)*shotDX+(c.y-oldShotY)*shotDY)/(shotLen2||1);
   return ta-tc;
  });
- for(let e of possibleHits){b.hit.add(e);let dmg=b.damage*(selected==='romance'&&e.charm>0?1+p.heartChain:1);harm(e,dmg);particlesAt(e.x,e.y,b.kind==='cloud'?'#9ce9ff':b.kind==='romance'?'#ff9ed5':b.kind==='wind'?'#baff55':'#e95a91',5);
+ for(let e of possibleHits){b.hit.add(e);let dmg=b.damage*(selected==='romance'&&e.charm>0?1+p.heartChain:1);harm(e,dmg);if(b.kind==='paperShuriken')addStatus(e,'bleed',2.7,b.bleed||b.damage*.2);particlesAt(e.x,e.y,b.kind==='cloud'?'#9ce9ff':b.kind==='romance'?'#ff9ed5':b.kind==='wind'?'#baff55':b.kind==='tideWave'?'#a6f5ff':b.kind==='paperShuriken'?'#fff0b0':'#e95a91',5);
 // Each class has a distinct basic-attack effect, not just a different projectile sprite.
 if(b.kind==='cloud'){particlesAt(e.x,e.y,'#c7f4ff',4);for(let near of enemies)if(near!==e&&!near.dead&&distance(near,e)<p.cloudSplashRadius)harm(near,b.damage*p.cloudSplash);}
 if(b.kind==='romance'&&Math.random()<p.heartBasicCharm+p.heartSpread)e.charm=Math.max(e.charm,1.2*p.heartDuration+p.heartCharmBonus);
@@ -1411,7 +2317,7 @@ if(b.kind==='chrono'){e.slow=Math.max(e.slow||0,1.5);p.attackTimer=Math.max(0,p.
 if(b.kind==='prism'){for(let j of [-1,1]){let a=Math.atan2(b.vy,b.vx)+j*.48;shots.push({owner:p,x:e.x,y:e.y,vx:Math.cos(a)*p.shotSpeed*.75,vy:Math.sin(a)*p.shotSpeed*.75,life:.4,damage:b.damage*.3,r:3,kind:'prismShard',target:null,pierce:0,bounce:0,hit:new Set([e])})}particlesAt(e.x,e.y,'#c2adff',8)}
 if(b.kind==='gravity'){e.x+=(p.x-e.x)*.08;e.y+=(p.y-e.y)*.08;particlesAt(e.x,e.y,'#c28dff',5)}
 if(p.knockback){let a=Math.atan2(e.y-b.y,e.x-b.x);knockEnemy(e,a,p.knockback);}
-if(p.execution&&e.hp>0&&e.hp/e.maxhp<p.execution)harm(e,b.damage*.6);if(b.bounce>0){let other=enemies.filter(z=>!z.dead&&!b.hit.has(z)&&distance(z,e)<280).sort((a,z)=>distance(a,e)-distance(z,e))[0];if(other){let a=Math.atan2(other.y-e.y,other.x-e.x);shots.push({owner:p,...b,x:e.x,y:e.y,vx:Math.cos(a)*p.shotSpeed,vy:Math.sin(a)*p.shotSpeed,target:other,bounce:b.bounce-1,life:.65,hit:new Set(b.hit)})}}if(b.pierce>0)b.pierce--;else b.life=0;break}}shots=shots.filter(b=>b.life>0);currentDamageOwner=null;for(let ef of effects){currentDamageOwner=ef.owner||p;ef.life-=dt;ef.tick=(ef.tick||0)-dt;if(ef.kind==='supernovaVisual')ef.phase+=dt*7;if(ef.kind==='starzone'){ef.age+=dt;ef.phase+=dt*4;let rr=ef.r*Math.min(1,.4+ef.age*1.1);if(ef.tick<=0){ef.tick=p.starTick;particlesAt(ef.x+rand(-rr,rr),ef.y+rand(-rr,rr),Math.random()<.5?'#86d8ff':'#bb86ff',7);for(let e of enemies)if(!e.dead&&distance(e,ef)<rr+e.r)harm(e,p.damage*.25*p.starPulse*p.abilityPower)}if(ef.life<=0){particlesAt(ef.x,ef.y,'#b8a1ff',85);effects.push({owner:p,kind:'supernovaVisual',x:ef.x,y:ef.y,r:ef.r,life:.85,fullLife:.85,phase:0});for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*1.45*p.starBlast*p.abilityPower);e.stun=Math.max(e.stun||0,p.starStun)}}}if(ef.kind==='cloud'){ef.x+=ef.vx*dt;ef.y+=ef.vy*dt;if(ef.tick<=0){ef.tick=p.cloudTick;for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*.45*p.abilityPower);e.slow=Math.max(e.slow,.7+p.cloudSlow);if(p.cloudLightning&&Math.random()<p.cloudLightning)harm(e,p.damage*.7*p.abilityPower)}}if(ef.life<=0&&p.cloudBurst){for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r)harm(e,p.damage*p.cloudBurst*p.abilityPower);particlesAt(ef.x,ef.y,'#b7f0ff',25)}}if(ef.kind==='lily'){ef.age+=dt;ef.phase+=dt*2;let growth=Math.min(1,ef.age/1.15),radius=ef.r*growth;if(ef.tick<=0&&ef.age>.9){ef.tick=p.lilyTick;particlesAt(ef.x+rand(-radius,radius),ef.y+rand(-radius,radius),'#ef5c96',5);for(let e of enemies)if(!e.dead&&distance(e,ef)<radius+e.r){harm(e,p.damage*.18*p.lilyPulse*p.abilityPower);p.hp=Math.min(p.maxhp,p.hp+p.lilyLifesteal)}}if(ef.life<=0){particlesAt(ef.x,ef.y,'#f56a9e',65);let hits=0;for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*1.4*p.lilyBurst*p.abilityPower);hits++}// Release ten miniature flowers, with gentle steering rather than full homing.
+if(p.execution&&e.hp>0&&e.hp/e.maxhp<p.execution)harm(e,b.damage*.6);if(b.bounce>0){let other=enemies.filter(z=>!z.dead&&!b.hit.has(z)&&distance(z,e)<280).sort((a,z)=>distance(a,e)-distance(z,e))[0];if(other){let a=Math.atan2(other.y-e.y,other.x-e.x);b.x=e.x;b.y=e.y;b.vx=Math.cos(a)*Math.hypot(b.vx,b.vy);b.vy=Math.sin(a)*Math.hypot(b.vx,b.vy);b.target=other;b.bounce--;b.life=Math.max(b.life,.65);b.ricocheted=true}}if(b.ricocheted){b.ricocheted=false;break}if(b.pierce>0)b.pierce--;else b.life=0;break}}shots=shots.filter(b=>b.life>0);currentDamageOwner=null;for(let ef of effects){currentDamageOwner=ef.owner||p;ef.life-=dt;ef.tick=(ef.tick||0)-dt;if(ef.kind==='supernovaVisual')ef.phase+=dt*7;if(ef.kind==='starzone'){ef.age+=dt;ef.phase+=dt*4;let rr=ef.r*Math.min(1,.4+ef.age*1.1);if(ef.tick<=0){ef.tick=p.starTick;particlesAt(ef.x+rand(-rr,rr),ef.y+rand(-rr,rr),Math.random()<.5?'#86d8ff':'#bb86ff',7);for(let e of enemies)if(!e.dead&&distance(e,ef)<rr+e.r)harm(e,p.damage*.25*p.starPulse*p.abilityPower)}if(ef.life<=0){particlesAt(ef.x,ef.y,'#b8a1ff',85);effects.push({owner:p,kind:'supernovaVisual',x:ef.x,y:ef.y,r:ef.r,life:.85,fullLife:.85,phase:0});for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*1.45*p.starBlast*p.abilityPower);e.stun=Math.max(e.stun||0,p.starStun)}}}if(ef.kind==='cloud'){ef.x+=ef.vx*dt;ef.y+=ef.vy*dt;if(ef.tick<=0){ef.tick=p.cloudTick;for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*.45*p.abilityPower);e.slow=Math.max(e.slow,.7+p.cloudSlow);if(p.cloudLightning&&Math.random()<p.cloudLightning)harm(e,p.damage*.7*p.abilityPower)}}if(ef.life<=0&&p.cloudBurst){for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r)harm(e,p.damage*p.cloudBurst*p.abilityPower);particlesAt(ef.x,ef.y,'#b7f0ff',25)}}if(ef.kind==='lily'){ef.age+=dt;ef.phase+=dt*2;let growth=Math.min(1,ef.age/1.15),radius=ef.r*growth;if(ef.tick<=0&&ef.age>.9){ef.tick=p.lilyTick;particlesAt(ef.x+rand(-radius,radius),ef.y+rand(-radius,radius),'#ef5c96',5);for(let e of enemies)if(!e.dead&&distance(e,ef)<radius+e.r){harm(e,p.damage*.18*p.lilyPulse*p.abilityPower);p.hp=Math.min(p.maxhp,p.hp+p.lilyLifesteal)}}if(ef.life<=0){particlesAt(ef.x,ef.y,'#f56a9e',65);let hits=0;for(let e of enemies)if(!e.dead&&distance(e,ef)<ef.r+e.r){harm(e,p.damage*1.4*p.lilyBurst*p.abilityPower);hits++}// Release ten miniature flowers, with gentle steering rather than full homing.
 for(let j=0;j<20;j++){let a=j*Math.PI/10+rand(-.14,.14),v=rand(215,275);effects.push({owner:p,kind:'lilyPetal',x:ef.x,y:ef.y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,r:5.5,life:2.9,age:0,phase:rand(0,6.28),hit:new Set()})}
 p.hp=Math.min(p.maxhp,p.hp+(12+hits*4)*p.lilyHeal);if(p.lilyEcho)effects.push({owner:p,kind:'echo',x:ef.x,y:ef.y,r:ef.r,life:1,tick:.5})}}
 if(ef.kind==='lilyPetal'){
@@ -1458,7 +2364,7 @@ for(const h of hearts){
  g.fillStyle='#fff';g.font='bold 10px system-ui';g.textAlign='center';g.fillText('+25',0,-14);
  g.restore();
 }
-for(let e of enemies){g.save();g.translate(e.x,e.y);g.shadowColor=e.color;g.shadowBlur=18;circle(0,0,e.r+3,'#09152b');circle(0,0,e.r,e.flash>0?'#fff':e.color);g.shadowBlur=0;circle(-e.r*.28,-e.r*.13,Math.max(2,e.r*.14),'#17243b');circle(e.r*.28,-e.r*.13,Math.max(2,e.r*.14),'#17243b');// Distinct enemy-bound animations: they move with the enemy.
+for(let e of enemies){g.save();g.translate(e.x,e.y);g.shadowColor=e.color;g.shadowBlur=18;circle(0,0,e.r+3,'#09152b');circle(0,0,e.r,e.flash>0?'#fff':e.color);g.shadowBlur=0;circle(-e.r*.28,-e.r*.13,Math.max(2,e.r*.14),'#17243b');circle(e.r*.28,-e.r*.13,Math.max(2,e.r*.14),'#17243b');if(e.skillFx?.myco>0){g.save();g.shadowColor='#b7ff78';g.shadowBlur=12;for(let j=0;j<3;j++){const x=(j-1)*e.r*.7,y=-e.r*.45+Math.sin(game.time*4+j)*2;g.fillStyle='#d2ffab';g.fillRect(x-2,y,4,10);g.fillStyle=j%2?'#9dd36d':'#c4ef90';g.beginPath();g.arc(x,y,7,Math.PI,0);g.fill();for(let k=0;k<2;k++)circle(x+(k?2:-2),y-3,1.6,'#fffbd5')}g.restore()}if(e.acidDrip>0){g.save();g.shadowColor='#e34a52';g.shadowBlur=14;g.strokeStyle='#c32638';g.lineWidth=4;for(let j=0;j<6;j++){let xx=(j-2.5)*e.r*.31,yy=((game.time*33+j*13)%(e.r*1.7));g.beginPath();g.moveTo(xx,-e.r*.7+yy*.3);g.lineTo(xx+Math.sin(j*3)*3,-e.r*.7+yy);g.stroke();circle(xx,-e.r*.7+yy,3,'#f44955')}g.restore()}// Distinct enemy-bound animations: they move with the enemy.
 if(e.skillFx){
  let tt=game.time;
  for(const [kind,remaining] of Object.entries(e.skillFx)){
@@ -1498,7 +2404,7 @@ if(e.skillFx){
 }
 if(e.statuses){
  let active=Object.entries(e.statuses).filter(([_,st])=>st.time>0).slice(0,5);
- let glyph={burn:'🔥',slow:'❄',vulnerable:'💠',root:'🌿'};
+ let glyph={burn:'🔥',slow:'❄',vulnerable:'💠',root:'🌿',bleed:'🩸'};
  g.font='12px system-ui';g.textAlign='center';g.textBaseline='middle';
  active.forEach(([kind,st],i)=>{
  let xx=(i-(active.length-1)/2)*25,yy=-e.r-30;
@@ -1514,7 +2420,16 @@ if(e.stun>0){g.font='19px system-ui';g.textAlign='center';g.fillText('✦',0,-e.
  g.restore();
  g.font='bold 12px system-ui';g.textAlign='center';g.fillStyle='#ffffff';
  g.fillText(e.bossName||'BOSS',0,-e.r-24);
- g.strokeStyle='#ffe2f5';g.lineWidth=3;g.beginPath();g.arc(0,0,e.r+8,0,Math.PI*2);g.stroke()}g.fillStyle='#142139';g.fillRect(-e.r,-e.r-12,e.r*2,5);g.fillStyle='#ff698d';g.fillRect(-e.r,-e.r-12,e.r*2*Math.max(0,e.hp/e.maxhp),5);g.restore()}for(let bolt of enemyBolts){g.shadowColor='#b39bff';g.shadowBlur=18;circle(bolt.x,bolt.y,bolt.r,({fire:'#ff9c5c',frost:'#9cefff',web:'#e1d1ff',dread:'#fa72cc'})[bolt.type]||'#bd9cff');g.shadowBlur=0}drawBots();for(const t of combatText){g.save();g.globalAlpha=Math.min(1,t.life*2);g.textAlign='center';g.textBaseline='middle';g.font=(t.crit?'bold 19px':'bold 13px')+' system-ui';g.lineWidth=3;g.strokeStyle='#081322';g.strokeText((t.crit?'✦ ':'')+t.amount,t.x+t.offset,t.y);g.fillStyle=t.kind==='burn'?'#ffad52':t.crit?'#fff19c':'#f5f9ff';g.fillText((t.crit?'✦ ':'')+t.amount,t.x+t.offset,t.y);g.restore()}for(let b of shots){g.shadowBlur=20;g.shadowColor=extraClasses[b.kind]?extraClasses[b.kind].color:b.kind==='cloud'?'#9befff':b.kind==='romance'?'#ff93cf':b.kind==='wind'?'#baff42':'#f3659c';if(b.kind==='star'){g.save();for(let tr of b.starTrail){g.globalAlpha=Math.max(0,tr.life/.28)*.8;circle(tr.x,tr.y,b.r*.95,Math.sin(b.starSpread*17)>0?'#a78bff':'#73c9ff')}g.restore();g.globalAlpha=1}if(b.kind==='wind'){g.save();for(let tr of b.trail){g.globalAlpha=Math.max(0,tr.life/.3)*.7;circle(tr.x,tr.y,b.r*.7,'#a9ff32')}g.restore();g.save();g.translate(b.x,b.y);g.rotate(Math.atan2(b.vy,b.vx));g.shadowColor='#b6ff42';g.shadowBlur=18;g.fillStyle='#b7ff79';g.beginPath();g.moveTo(17*b.r/6,0);g.lineTo(-12*b.r/6,-5*b.r/6);g.quadraticCurveTo(-3,-1,17*b.r/6,0);g.lineTo(-12*b.r/6,5*b.r/6);g.closePath();g.fill();g.restore();continue}circle(b.x,b.y,b.r+3,selected==='cloud'?'#8bcfff77':selected==='romance'?'#ff93cf77':'#d04c8b77');if(extraClasses[b.kind]){g.save();g.translate(b.x,b.y);g.rotate(game.time*5);g.fillStyle=extraClasses[b.kind].color;g.beginPath();for(let i=0;i<8;i++){let a=i*Math.PI/4,rr=i%2?b.r*.55:b.r*1.5;g.lineTo(Math.cos(a)*rr,Math.sin(a)*rr)}g.closePath();g.fill();g.restore()}else if(b.kind==='star'){g.save();g.translate(b.x,b.y);g.rotate(game.time*4);g.fillStyle='#ffffff';g.shadowColor=Math.sin(b.starSpread*17)>0?'#a27aff':'#71caff';g.shadowBlur=20;g.beginPath();for(let j=0;j<10;j++){let a=j*Math.PI/5,rad=j%2?b.r*.6:b.r*1.7;g.lineTo(Math.cos(a)*rad,Math.sin(a)*rad)}g.closePath();g.fill();g.restore()}else if(b.kind==='lily'){g.save();g.translate(b.x,b.y);g.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2);g.fillStyle='#ec629b';g.beginPath();g.ellipse(0,0,5,13,0,0,Math.PI*2);g.fill();g.strokeStyle='#2a0b2c';g.lineWidth=2;g.stroke();g.restore()}else if(b.kind==='cloud'){circle(b.x,b.y,b.r,'#e4faff');circle(b.x-3,b.y-2,b.r*.65,'#b2e9ff');circle(b.x+4,b.y+1,b.r*.7,'#ffffff')}else{g.font='19px system-ui';g.textAlign='center';g.textBaseline='middle';g.fillText('💖',b.x,b.y)}g.shadowBlur=0}if(p.hp>0){g.save();g.translate(p.x,p.y);g.shadowColor=extraClasses[selected]?extraClasses[selected].color:selected==='cloud'?'#a9eeff':selected==='romance'?'#ff9dd7':selected==='wind'?'#aaff5b':selected==='star'?'#b0aaff':selected==='electro'?'#7bf5ff':'#ee679e';g.shadowBlur=32;circle(0,0,24,selected==='cloud'?'#8bd7ff44':selected==='romance'?'#ff8bd744':selected==='wind'?'#a4ff5b44':selected==='star'?'#7777ff44':selected==='electro'?'#32d8ff44':'#aa397544');circle(0,0,p.r,extraClasses[selected]?extraClasses[selected].color:p.inv>0&&Math.floor(game.time*12)%2?'#ffffff':selected==='cloud'?'#d9f8ff':selected==='romance'?'#ffd0eb':selected==='wind'?'#d6ffa7':selected==='star'?'#c5c0ff':selected==='electro'?'#a5f9ff':'#e79ac2');g.shadowBlur=0;g.lineCap='round';if(extraClasses[selected]){circle(-5,-3,2.7,'#1d2443');circle(5,-3,2.7,'#1d2443');g.fillStyle='#17213c';g.fillRect(-3,5,6,2);g.font='13px sans-serif';g.textAlign='center';g.fillText(extraClasses[selected].emoji,0,-19)}else if(selected==='cloud'){circle(-5,-3,2.5,'#344260');circle(5,-3,2.5,'#344260');g.strokeStyle='#5c91aa';g.lineWidth=2;g.beginPath();g.arc(0,3,4,.1,Math.PI-.1);g.stroke()}else if(selected==='romance'){g.font='bold 11px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillStyle='#a53c7b';g.fillText('♥',-5,-3);g.fillText('♥',5,-3);g.strokeStyle='#b45483';g.lineWidth=2;g.beginPath();g.arc(0,2,5,.1,Math.PI-.1);g.stroke();circle(-11,3,3,'#ff81bb88');circle(11,3,3,'#ff81bb88')}else if(selected==='lily'){g.strokeStyle='#54233c';g.lineWidth=2.5;g.beginPath();g.moveTo(-9,-7);g.lineTo(-2,-4);g.moveTo(9,-7);g.lineTo(2,-4);g.stroke();circle(-5,-2,2.4,'#651d3c');circle(5,-2,2.4,'#651d3c');g.strokeStyle='#702844';g.lineWidth=2;g.beginPath();g.moveTo(-3,6);g.quadraticCurveTo(0,4,3,6);g.stroke();g.fillStyle='#ae3265';g.beginPath();g.ellipse(0,-14,4,8,0,0,Math.PI*2);g.fill()}else if(selected==='wind'){g.strokeStyle='#347348';g.lineWidth=2.4;g.beginPath();g.moveTo(-9,-5);g.lineTo(-3,-7);g.moveTo(3,-7);g.lineTo(9,-5);g.stroke();circle(-5,-2,2.4,'#286c3b');circle(5,-2,2.4,'#286c3b');g.strokeStyle='#397d45';g.lineWidth=2;g.beginPath();g.arc(0,3,4,.1,Math.PI-.1);g.stroke();g.strokeStyle='#c4ff68';g.beginPath();g.moveTo(-10,-14);g.lineTo(-5,-20);g.moveTo(10,-14);g.lineTo(5,-20);g.stroke()}else if(selected==='star'){circle(-5,-3,2.6,'#534a9b');circle(5,-3,2.6,'#534a9b');circle(0,5,2.1,'#5c50a3');g.fillStyle='#fff7c9';g.font='13px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText('✦',0,-15);circle(-10,2,2.5,'#9e93ff99');circle(10,2,2.5,'#9e93ff99')}else if(selected==='electro'){g.strokeStyle='#157b9d';g.lineWidth=2;g.beginPath();g.moveTo(-9,-6);g.lineTo(-3,-4);g.lineTo(-9,-2);g.moveTo(9,-6);g.lineTo(3,-4);g.lineTo(9,-2);g.stroke();g.fillStyle='#1685aa';g.fillRect(-3,4,6,2);g.strokeStyle='#50edff';g.beginPath();g.moveTo(-11,-14);g.lineTo(-7,-19);g.lineTo(-3,-15);g.moveTo(11,-14);g.lineTo(7,-19);g.lineTo(3,-15);g.stroke()}for(let i=0;i<3;i++){let a=game.time*1.7+i*Math.PI*2/3;circle(Math.cos(a)*25,Math.sin(a)*18,5,selected==='cloud'?'#a4eaffaa':selected==='romance'?'#ff8dd0aa':selected==='wind'?'#b7ff58aa':selected==='star'?'#aaa0ffaa':selected==='electro'?'#65e9ffaa':'#ae417caa')}if(selected==='wind'&&p.windActive>0){g.strokeStyle='#c2ff6b';g.lineWidth=3;g.beginPath();g.arc(0,0,30+3*Math.sin(game.time*12),0,Math.PI*2);g.stroke()}g.restore();}for(let z of particles){g.globalAlpha=clamp(z.life/z.max,0,1);circle(z.x,z.y,z.r,z.color)}g.globalAlpha=1;g.restore();let shade=g.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.8);shade.addColorStop(0,'#0000');shade.addColorStop(1,'#02081799');g.fillStyle=shade;g.fillRect(0,0,W,H);drawBotSpeech();drawBossCinema()}function frame(t){let dt=Math.min(.033,(t-last)/1000||.016);last=t;if(bossCinema){bossCinema.remaining-=dt;if(bossCinema.remaining<=0)bossCinema=null;}let speed=game.speed===2?2:1;let sim=dt*speed;let steps=Math.max(1,Math.ceil(sim/.016));for(let i=0;i<steps;i++)tick(sim/steps);draw();requestAnimationFrame(frame)}addEventListener('keydown',e=>{let k=e.key.toLowerCase();keys[k]=true;if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(k))e.preventDefault();if(k==='f'&&!e.repeat)ability();if(k==='shift'&&!e.repeat)dash();if(k==='p'&&!e.repeat)pause()});addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);addEventListener('blur',()=>{keys={};joy.x=joy.y=0});$('pause').onclick=pause;$('speedToggle').onclick=()=>{game.speed=game.speed===2?1:2;$('speedToggle').textContent=game.speed===2?'⏩ 2× SPEED: ON':'⏩ 2× SPEED: OFF';say(game.speed===2?'⏩ DOUBLE SPEED ENABLED':'▶ NORMAL SPEED ENABLED')};// Pointer-down actions fire immediately, independently of the joystick's captured pointer.
+ g.strokeStyle='#ffe2f5';g.lineWidth=3;g.beginPath();g.arc(0,0,e.r+8,0,Math.PI*2);g.stroke()}g.fillStyle='#142139';g.fillRect(-e.r,-e.r-12,e.r*2,5);g.fillStyle='#ff698d';g.fillRect(-e.r,-e.r-12,e.r*2*Math.max(0,e.hp/e.maxhp),5);g.restore()}for(let bolt of enemyBolts){g.shadowColor='#b39bff';g.shadowBlur=18;circle(bolt.x,bolt.y,bolt.r,({fire:'#ff9c5c',frost:'#9cefff',web:'#e1d1ff',dread:'#fa72cc'})[bolt.type]||'#bd9cff');g.shadowBlur=0}drawBots();for(const t of combatText){g.save();g.globalAlpha=Math.min(1,t.life*2);g.textAlign='center';g.textBaseline='middle';g.font=(t.crit?'bold 19px':'bold 13px')+' system-ui';g.lineWidth=3;g.strokeStyle='#081322';g.strokeText((t.crit?'✦ ':'')+t.amount,t.x+t.offset,t.y);g.fillStyle=t.kind==='burn'?'#ffad52':t.crit?'#fff19c':'#f5f9ff';g.fillText((t.crit?'✦ ':'')+t.amount,t.x+t.offset,t.y);g.restore()}for(let b of shots){g.shadowBlur=20;g.shadowColor=extraClasses[b.kind]?extraClasses[b.kind].color:b.kind==='cloud'?'#9befff':b.kind==='romance'?'#ff93cf':b.kind==='wind'?'#baff42':'#f3659c';if(b.kind==='star'){g.save();for(let tr of b.starTrail){g.globalAlpha=Math.max(0,tr.life/.28)*.8;circle(tr.x,tr.y,b.r*.95,Math.sin(b.starSpread*17)>0?'#a78bff':'#73c9ff')}g.restore();g.globalAlpha=1}if(b.kind==='tideWave'){
+ g.save();g.translate(b.x,b.y);g.rotate(Math.atan2(b.vy,b.vx));g.shadowColor='#58dfff';g.shadowBlur=16;
+ g.strokeStyle='#a5f7ff';g.lineWidth=4;g.beginPath();g.moveTo(-12,4);g.quadraticCurveTo(-2,-12,11,0);g.quadraticCurveTo(4,-2,-1,6);g.stroke();
+ g.strokeStyle='#3cb8ed';g.lineWidth=3;g.beginPath();g.arc(-1,2,9,-2.5,.7);g.stroke();g.restore();continue;
+}
+if(b.kind==='paperShuriken'){
+ g.save();for(const tr of b.trail||[]){g.globalAlpha=Math.max(0,tr.life/.28)*.45;circle(tr.x,tr.y,5,'#fff4c7')}g.globalAlpha=1;g.translate(b.x,b.y);g.rotate(game.time*9+(b.spin||0));g.shadowColor='#fff4bc';g.shadowBlur=12;
+ g.fillStyle='#fff5d2';for(let i=0;i<4;i++){g.rotate(Math.PI/2);g.beginPath();g.moveTo(0,-16);g.lineTo(5,-3);g.lineTo(0,0);g.lineTo(-5,-3);g.closePath();g.fill()}g.restore();continue;
+}
+if(b.kind==='wind'){g.save();for(let tr of b.trail){g.globalAlpha=Math.max(0,tr.life/.3)*.7;circle(tr.x,tr.y,b.r*.7,'#a9ff32')}g.restore();g.save();g.translate(b.x,b.y);g.rotate(Math.atan2(b.vy,b.vx));g.shadowColor='#b6ff42';g.shadowBlur=18;g.fillStyle='#b7ff79';g.beginPath();g.moveTo(17*b.r/6,0);g.lineTo(-12*b.r/6,-5*b.r/6);g.quadraticCurveTo(-3,-1,17*b.r/6,0);g.lineTo(-12*b.r/6,5*b.r/6);g.closePath();g.fill();g.restore();continue}circle(b.x,b.y,b.r+3,selected==='cloud'?'#8bcfff77':selected==='romance'?'#ff93cf77':'#d04c8b77');drawUniqueClassFace(b.kind,b.x,b.y,b.r,Math.atan2(b.vy||0,b.vx||1));g.shadowBlur=0}if(p.hp>0){g.save();g.translate(p.x,p.y);g.shadowColor=extraClasses[selected]?extraClasses[selected].color:selected==='cloud'?'#a9eeff':selected==='romance'?'#ff9dd7':selected==='wind'?'#aaff5b':selected==='star'?'#b0aaff':selected==='electro'?'#7bf5ff':'#ee679e';g.shadowBlur=32;circle(0,0,24,selected==='cloud'?'#8bd7ff44':selected==='romance'?'#ff8bd744':selected==='wind'?'#a4ff5b44':selected==='star'?'#7777ff44':selected==='electro'?'#32d8ff44':'#aa397544');drawUniqueClassFace(selected,0,0,p.r,Math.atan2(p.faceY||0,p.faceX||1));g.shadowBlur=0;g.lineCap='round';for(let i=0;i<3;i++){let a=game.time*1.7+i*Math.PI*2/3;circle(Math.cos(a)*25,Math.sin(a)*18,5,selected==='cloud'?'#a4eaffaa':selected==='romance'?'#ff8dd0aa':selected==='wind'?'#b7ff58aa':selected==='star'?'#aaa0ffaa':selected==='electro'?'#65e9ffaa':'#ae417caa')}if(selected==='wind'&&p.windActive>0){g.strokeStyle='#c2ff6b';g.lineWidth=3;g.beginPath();g.arc(0,0,30+3*Math.sin(game.time*12),0,Math.PI*2);g.stroke()}g.restore();}for(let z of particles){g.globalAlpha=clamp(z.life/z.max,0,1);circle(z.x,z.y,z.r,z.color)}g.globalAlpha=1;g.restore();let shade=g.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.8);shade.addColorStop(0,'#0000');shade.addColorStop(1,'#02081799');g.fillStyle=shade;g.fillRect(0,0,W,H);drawBotSpeech();drawBossCinema()}function frame(t){let dt=Math.min(.033,(t-last)/1000||.016);last=t;if(bossCinema){bossCinema.remaining-=dt;if(bossCinema.remaining<=0)bossCinema=null;}let speed=game.speed===2?2:1;let sim=dt*speed;let steps=Math.max(1,Math.ceil(sim/.016));for(let i=0;i<steps;i++)tick(sim/steps);draw();requestAnimationFrame(frame)}addEventListener('keydown',e=>{let k=e.key.toLowerCase();keys[k]=true;if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(k))e.preventDefault();if(k==='f'&&!e.repeat)ability();if(k==='shift'&&!e.repeat)dash();if(k==='p'&&!e.repeat)pause()});addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);addEventListener('blur',()=>{keys={};joy.x=joy.y=0});$('pause').onclick=pause;$('speedToggle').onclick=()=>{game.speed=game.speed===2?1:2;$('speedToggle').textContent=game.speed===2?'⏩ 2× SPEED: ON':'⏩ 2× SPEED: OFF';say(game.speed===2?'⏩ DOUBLE SPEED ENABLED':'▶ NORMAL SPEED ENABLED')};// Pointer-down actions fire immediately, independently of the joystick's captured pointer.
 for(const [id,fn] of [['actionBtn',ability],['dashTouchBtn',dash]]){
  const btn=$(id);
  btn.style.touchAction='none';
